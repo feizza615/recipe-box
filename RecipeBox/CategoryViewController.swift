@@ -10,7 +10,8 @@ import UIKit
 class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    let catNames: [String] = ["Meat", "Fish", "Vegg", "Fruit", "Dairy", "Wheat"]
+    let catImage: [String] = ["meat", "fish", "vege", "fruits", "dairy", "wheat"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,15 +28,15 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryGridCell", for: indexPath) as! CategoryGridCell
         
         
-        cell.CategoryView.image = UIImage(named: "meat")
-        cell.CategoryName.text = "Meat"
+        cell.CategoryView.image = UIImage(named: catImage[indexPath.row])
+        cell.CategoryName.text = catNames[indexPath.row]
         print("hello")
         return cell
     }
