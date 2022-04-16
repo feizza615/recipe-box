@@ -5,16 +5,23 @@
 //  Created by Feizza Fazilatun on 4/10/22.
 //
 
+import FirebaseDatabase
 import UIKit
 
 class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
+    //MARK: Swift 5: Firebase Database in App - Setup/Read/Write Data Video
+    private let database = Database.database().reference()
+    
     @IBOutlet weak var collectionView: UICollectionView!
-    let catNames: [String] = ["Meat", "Fish", "Vegg", "Fruit", "Dairy", "Wheat"]
+    
+    var catArray=[CategoryModel]()
     let catImage: [String] = ["meat", "fish", "vege", "fruits", "dairy", "wheat"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -25,19 +32,46 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
             NSAttributedString.Key.font: UIFont(name: "Avenir", size: 24)!
         ]
         UINavigationBar.appearance().titleTextAttributes = attrs
+        observeCategory()
+    }
+    
+    
+    func observeCategory(){
+        let catRef = database.child("categories")
+        var categories = [CategoryModel]()
+        catRef.observe(.value, with: {snapshot in
+            for child in snapshot.children{
+                if let childSnapshot = child as? DataSnapshot,
+                    let dict = childSnapshot.value as? [String:Any] {
+                    let name = dict["catName"] as? String
+                    let image = dict["catImage"] as? String
+                    let category = CategoryModel(categoryName: name, categoryImage: image)
+                    categories.append(category)
+                   // self.catArray.append(category)
+                }else{
+                    print("hi")
+                }
+                                //print(self.catArray.count)
+            }
+        } )
+        self.catArray = categories
+        collectionView.reloadData()
+     
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        collectionView.reloadData()
+         return catArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryGridCell", for: indexPath) as! CategoryGridCell
         
         
         cell.CategoryView.image = UIImage(named: catImage[indexPath.row])
-        cell.CategoryName.text = catNames[indexPath.row]
-        print("hello")
+        //cell.CategoryName.text = catArray[indexPath.row].categoryName
         return cell
     }
 

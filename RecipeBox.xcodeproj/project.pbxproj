@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063B4D8AD44B3CDFE8961732 /* Pods_RecipeBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5534FA658294BE8A7A19399 /* Pods_RecipeBox.framework */; };
 		975AB64F28033B6300BA798B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AB64E28033B6300BA798B /* AppDelegate.swift */; };
 		975AB65128033B6300BA798B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AB65028033B6300BA798B /* SceneDelegate.swift */; };
 		975AB65628033B6300BA798B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975AB65428033B6300BA798B /* Main.storyboard */; };
@@ -14,6 +15,8 @@
 		975AB65B28033B6700BA798B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975AB65928033B6700BA798B /* LaunchScreen.storyboard */; };
 		975AB6672803AA2600BA798B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AB6662803AA2600BA798B /* CategoryViewController.swift */; };
 		975AB6692803ABBB00BA798B /* CategoryGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AB6682803ABBB00BA798B /* CategoryGridCell.swift */; };
+		979B09DA280A68D9008CE0BE /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B09D9280A68D9008CE0BE /* CategoryModel.swift */; };
+		97C01EF42808844B00540EBB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97C01EF32808844B00540EBB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		975AB65C28033B6700BA798B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		975AB6662803AA2600BA798B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		975AB6682803ABBB00BA798B /* CategoryGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGridCell.swift; sourceTree = "<group>"; };
+		979B09D9280A68D9008CE0BE /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		97C01EF32808844B00540EBB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A5534FA658294BE8A7A19399 /* Pods_RecipeBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F358E6FF012038482727B0 /* Pods-RecipeBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeBox.debug.xcconfig"; path = "Target Support Files/Pods-RecipeBox/Pods-RecipeBox.debug.xcconfig"; sourceTree = "<group>"; };
+		C6459B4998F05307DE941BDE /* Pods-RecipeBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeBox.release.xcconfig"; path = "Target Support Files/Pods-RecipeBox/Pods-RecipeBox.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063B4D8AD44B3CDFE8961732 /* Pods_RecipeBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F86ED2F95BF7B96000F3DC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5534FA658294BE8A7A19399 /* Pods_RecipeBox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D44D6C8673CAAD061D8C293 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3F358E6FF012038482727B0 /* Pods-RecipeBox.debug.xcconfig */,
+				C6459B4998F05307DE941BDE /* Pods-RecipeBox.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		975AB64228033B6300BA798B = {
 			isa = PBXGroup;
 			children = (
 				975AB64D28033B6300BA798B /* RecipeBox */,
 				975AB64C28033B6300BA798B /* Products */,
+				2D44D6C8673CAAD061D8C293 /* Pods */,
+				1F86ED2F95BF7B96000F3DC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +86,7 @@
 		975AB64D28033B6300BA798B /* RecipeBox */ = {
 			isa = PBXGroup;
 			children = (
+				97C01EF32808844B00540EBB /* GoogleService-Info.plist */,
 				975AB64E28033B6300BA798B /* AppDelegate.swift */,
 				975AB65028033B6300BA798B /* SceneDelegate.swift */,
 				975AB65428033B6300BA798B /* Main.storyboard */,
@@ -66,6 +95,7 @@
 				975AB65928033B6700BA798B /* LaunchScreen.storyboard */,
 				975AB65C28033B6700BA798B /* Info.plist */,
 				975AB6662803AA2600BA798B /* CategoryViewController.swift */,
+				979B09D9280A68D9008CE0BE /* CategoryModel.swift */,
 			);
 			path = RecipeBox;
 			sourceTree = "<group>";
@@ -77,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 975AB65F28033B6700BA798B /* Build configuration list for PBXNativeTarget "RecipeBox" */;
 			buildPhases = (
+				2CDF360F7F24D2AA9A8D325F /* [CP] Check Pods Manifest.lock */,
 				975AB64728033B6300BA798B /* Sources */,
 				975AB64828033B6300BA798B /* Frameworks */,
 				975AB64928033B6300BA798B /* Resources */,
+				F664143C0EBED9DF8797306A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,12 +161,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				975AB65B28033B6700BA798B /* LaunchScreen.storyboard in Resources */,
+				97C01EF42808844B00540EBB /* GoogleService-Info.plist in Resources */,
 				975AB65828033B6700BA798B /* Assets.xcassets in Resources */,
 				975AB65628033B6300BA798B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CDF360F7F24D2AA9A8D325F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecipeBox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F664143C0EBED9DF8797306A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecipeBox/Pods-RecipeBox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecipeBox/Pods-RecipeBox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecipeBox/Pods-RecipeBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		975AB64728033B6300BA798B /* Sources */ = {
@@ -144,6 +219,7 @@
 				975AB64F28033B6300BA798B /* AppDelegate.swift in Sources */,
 				975AB6692803ABBB00BA798B /* CategoryGridCell.swift in Sources */,
 				975AB6672803AA2600BA798B /* CategoryViewController.swift in Sources */,
+				979B09DA280A68D9008CE0BE /* CategoryModel.swift in Sources */,
 				975AB65128033B6300BA798B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +364,7 @@
 		};
 		975AB66028033B6700BA798B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3F358E6FF012038482727B0 /* Pods-RecipeBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,6 +395,7 @@
 		};
 		975AB66128033B6700BA798B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6459B4998F05307DE941BDE /* Pods-RecipeBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

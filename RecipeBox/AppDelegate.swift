@@ -5,6 +5,8 @@
 //  Created by Feizza Fazilatun on 4/10/22.
 //
 
+//MARK: Swift 5: Firebase Database in App - Setup/Read/Write Data Video
+import Firebase
 import UIKit
 
 @main
@@ -14,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 
