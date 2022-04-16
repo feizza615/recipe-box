@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="-84" y="21.139430284857571"/>
         </scene>
-        <!--Categories-->
+        <!--What's in Your Kitchen?-->
         <scene sceneID="hA0-ks-3zH">
             <objects>
                 <viewController id="AcM-h1-ymt" customClass="CategoryViewController" customModule="RecipeBox" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,7 +172,7 @@
                         <viewLayoutGuide key="safeArea" id="0eC-Oj-4e2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Categories" id="dIX-8Z-nhl"/>
+                    <navigationItem key="navigationItem" title="What's in Your Kitchen?" id="dIX-8Z-nhl"/>
                     <connections>
                         <outlet property="collectionView" destination="Pkn-61-6a5" id="RYt-3G-hDH"/>
                     </connections>
@@ -181,7 +181,7 @@
             </objects>
             <point key="canvasLocation" x="1397.5999999999999" y="19.340329835082461"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Recipes-->
         <scene sceneID="TJS-lQ-Zj5">
             <objects>
                 <tableViewController id="0cV-ar-gub" sceneMemberID="viewController">
@@ -204,13 +204,13 @@
                             <outlet property="delegate" destination="0cV-ar-gub" id="NZA-Gb-5yu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iOQ-mL-Q6A"/>
+                    <navigationItem key="navigationItem" title="Recipes" id="iOQ-mL-Q6A"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r6-yK-f7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1422" y="756"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Ingredients-->
         <scene sceneID="rvx-Dr-pIj">
             <objects>
                 <tableViewController id="1hT-AS-TFL" sceneMemberID="viewController">
@@ -246,7 +246,7 @@
                             <outlet property="delegate" destination="1hT-AS-TFL" id="CuX-Us-4Ki"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="h3P-Nt-eqj"/>
+                    <navigationItem key="navigationItem" title="Ingredients" id="h3P-Nt-eqj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybT-2x-zqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
