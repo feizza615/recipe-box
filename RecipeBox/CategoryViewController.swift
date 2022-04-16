@@ -39,23 +39,28 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     func observeCategory(){
         let catRef = database.child("categories")
         var categories = [CategoryModel]()
-        catRef.observe(.value, with: {snapshot in
-            for child in snapshot.children{
-                if let childSnapshot = child as? DataSnapshot,
-                    let dict = childSnapshot.value as? [String:Any] {
-                    let name = dict["catName"] as? String
-                    let image = dict["catImage"] as? String
-                    let category = CategoryModel(categoryName: name, categoryImage: image)
-                    categories.append(category)
-                   // self.catArray.append(category)
-                }else{
-                    print("hi")
+        let queue = DispatchQueue.global()
+        queue.async {
+            catRef.observe(.value, with: {snapshot in
+                for child in snapshot.children{
+                    if let childSnapshot = child as? DataSnapshot,
+                        let dict = childSnapshot.value as? [String:Any] {
+                        let name = dict["catName"] as? String
+                        let image = dict["catImage"] as? String
+                        let category = CategoryModel(categoryName: name, categoryImage: image)
+                        categories.append(category)
+                    }
                 }
-                                //print(self.catArray.count)
-            }
-        } )
-        self.catArray = categories
-        collectionView.reloadData()
+                self.catArray = categories
+                self.collectionView.reloadData()
+                print(self.catArray.count)
+            } )
+            DispatchQueue.main.async {
+                print("DONE")
+              }
+        }
+       
+       
      
         
     }
@@ -70,8 +75,8 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryGridCell", for: indexPath) as! CategoryGridCell
         
         
-        cell.CategoryView.image = UIImage(named: catImage[indexPath.row])
-        //cell.CategoryName.text = catArray[indexPath.row].categoryName
+        cell.CategoryView.image = UIImage(named: catArray[indexPath.row].categoryImage!)
+        cell.CategoryName.text = catArray[indexPath.row].categoryName
         return cell
     }
 
