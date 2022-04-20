@@ -7,11 +7,18 @@
 
 import UIKit
 
+//https://stackoverflow.com/questions/62989843/can-we-return-two-arrays-in-one-tableview-numberofrowsinsection-without-using-se
+
 class IngredientsTableViewController: UITableViewController {
 
+    
+    var info: CategoryModel?
+    var ingredients:[String] = []
+    var yourIngredients:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ingredients = info?.ingredients ?? []
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,23 +30,38 @@ class IngredientsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0{
+            return "Ingredients"
+        }
+        return "Your Ingredients"
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if section == 0{
+            return ingredients.count
+        }
+        return 3
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        if indexPath.section == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
+            let label = cell.viewWithTag(200) as! UILabel
+            label.text = ingredients[indexPath.row]
+            
+            return cell
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "yourIngredientCell", for: indexPath)
+        let label = cell.viewWithTag(201) as! UILabel
+        label.text = "goodbye"
         return cell
+        
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

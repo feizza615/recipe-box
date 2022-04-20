@@ -80,14 +80,25 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         return cell
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "viewIngredients"){
+            let IngredientsView = segue.destination as! IngredientsTableViewController
+            IngredientsView.info = sender as? CategoryModel
+        }
     }
-    */
+    //MARK: Sources for passing category info via segue
+    //https://developer.apple.com/documentation/uikit/uiviewcontroller/1621413-performsegue
+    //https://odenza.medium.com/how-to-pass-parameters-to-another-view-when-using-performsegue-in-swift-5-dd96832b412d
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let categoryInfo = catArray[indexPath.row]
+        performSegue(withIdentifier: "viewIngredients", sender: categoryInfo)
+    }
 
 }

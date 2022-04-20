@@ -144,7 +144,7 @@
                                         <connections>
                                             <outlet property="CategoryName" destination="uHU-A0-H0C" id="2Dh-x6-V2D"/>
                                             <outlet property="CategoryView" destination="7DT-Vm-cF3" id="0UW-ZQ-7oE"/>
-                                            <segue destination="1hT-AS-TFL" kind="show" id="7w2-xe-2hp"/>
+                                            <segue destination="1hT-AS-TFL" kind="show" identifier="viewIngredients" id="7w2-xe-2hp"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -215,30 +215,51 @@
         <scene sceneID="rvx-Dr-pIj">
             <objects>
                 <tableViewController id="1hT-AS-TFL" customClass="IngredientsTableViewController" customModule="RecipeBox" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="mj1-5W-APQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="mj1-5W-APQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="6PL-1C-rdW">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" tag="100" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0Zc-A8-2hg">
-                                <rect key="frame" x="0.0" y="93.5" width="375" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" tag="100" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientCell" id="0Zc-A8-2hg">
+                                <rect key="frame" x="16" y="49.5" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Zc-A8-2hg" id="rUc-pR-XuH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-Wz-11V">
+                                            <rect key="frame" x="24" y="11" width="42" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.99484437699999995" green="0.94826608899999998" blue="0.84429597850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="ycb-Wz-11V" firstAttribute="top" secondItem="rUc-pR-XuH" secondAttribute="topMargin" id="Xsa-2C-Unb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ycb-Wz-11V" secondAttribute="bottom" constant="0.5" id="cZb-nm-6gQ"/>
+                                        <constraint firstItem="ycb-Wz-11V" firstAttribute="leading" secondItem="rUc-pR-XuH" secondAttribute="leadingMargin" constant="8" id="dGz-G9-lyy"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" tag="101" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="u3t-iE-Qje">
-                                <rect key="frame" x="0.0" y="137" width="375" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" tag="101" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="yourIngredientCell" id="u3t-iE-Qje">
+                                <rect key="frame" x="16" y="93.5" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u3t-iE-Qje" id="fpJ-so-irX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="201" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XS7-QE-8Ht">
+                                            <rect key="frame" x="25" y="11" width="42" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XS7-QE-8Ht" firstAttribute="leading" secondItem="fpJ-so-irX" secondAttribute="leadingMargin" constant="9" id="Axj-Te-31I"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="XS7-QE-8Ht" secondAttribute="bottom" constant="0.5" id="EnC-Rg-JrX"/>
+                                        <constraint firstItem="XS7-QE-8Ht" firstAttribute="top" secondItem="fpJ-so-irX" secondAttribute="topMargin" id="U7M-LZ-O1r"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
