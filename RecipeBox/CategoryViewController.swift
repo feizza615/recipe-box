@@ -16,9 +16,8 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     
     var catArray=[CategoryModel]()
-    let catImage: [String] = ["meat", "fish", "vege", "fruits", "dairy", "wheat"]
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +46,8 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
                         let dict = childSnapshot.value as? [String:Any] {
                         let name = dict["catName"] as? String
                         let image = dict["catImage"] as? String
-                        let category = CategoryModel(categoryName: name, categoryImage: image)
+                        let ingredientList = dict["ingredients"] as? [String]
+                        let category = CategoryModel(categoryName: name, categoryImage: image, ingredients: ingredientList)
                         categories.append(category)
                     }
                 }

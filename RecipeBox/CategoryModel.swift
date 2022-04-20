@@ -10,8 +10,10 @@ import Foundation
 class CategoryModel{
     var categoryName: String?
     var categoryImage: String?
-    init(categoryName: String?, categoryImage:String?){
+    var ingredients:[String]?
+    init(categoryName: String?, categoryImage:String?, ingredients:[String]?){
         self.categoryName = categoryName
         self.categoryImage = categoryImage
+        self.ingredients = ingredients
     }
 }
