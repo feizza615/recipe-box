@@ -99,7 +99,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let categoryInfo = catArray[indexPath.row]
-        performSegue(withIdentifier: "viewIngredients", sender: categoryInfo)
+        self.performSegue(withIdentifier: "viewIngredients", sender: categoryInfo)
     }
 
 }

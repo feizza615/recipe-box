@@ -8,16 +8,44 @@
 import UIKit
 
 class RecipesTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        sendIngredients()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    // MARK: - Creates URL
+    func spoonacularURL(ingredientText: String) -> URL {
+        let encodedText = ingredientText.addingPercentEncoding(
+            withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+      let urlString = String(
+        format: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=08927d2539f34cd380ec63a2d230e57e&ignorePantry=true&number=1&ingredients=%@",encodedText)
+      let url = URL(string: urlString)
+      return url!
+    }
+    
+    func sendIngredients(){
+        let url = spoonacularURL(ingredientText: "apple,+sugar,+flour,+sour cream")
+        print("URL: '\(url)'")
+        if let jsonString = performStoreRequest(with: url) {
+          print("Received JSON string '\(jsonString)'")
+        }
+    }
+    
+    func performStoreRequest(with url: URL) -> String? {
+      do {
+       return try String(contentsOf: url, encoding: .utf8)
+      } catch {
+       print("Download Error: \(error.localizedDescription)")
+       return nil
+      }
+    }
+
 
     // MARK: - Table view data source
 
