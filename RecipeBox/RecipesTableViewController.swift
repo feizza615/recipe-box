@@ -1,5 +1,5 @@
 //
-//  IngredientsTableViewController.swift
+//  RecipesTableViewController.swift
 //  RecipeBox
 //
 //  Created by Feizza Fazilatun on 4/20/22.
@@ -7,19 +7,11 @@
 
 import UIKit
 
-//https://stackoverflow.com/questions/62989843/can-we-return-two-arrays-in-one-tableview-numberofrowsinsection-without-using-se
+class RecipesTableViewController: UITableViewController {
 
-class IngredientsTableViewController: UITableViewController {
-
-    
-    var info: CategoryModel?
-    var ingredients:[String] = []
-    var yourIngredients:[String] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        ingredients = info?.ingredients ?? []
-        self.title = info?.categoryName
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -31,63 +23,22 @@ class IngredientsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
-    }
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0{
-            return "Ingredients"
-        }
-        return "Your Ingredients"
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0{
-            return ingredients.count
-        }
-        return yourIngredients.count
+        // #warning Incomplete implementation, return the number of rows
+        return 3
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
-            let label = cell.viewWithTag(200) as! UILabel
-            label.text = ingredients[indexPath.row]
-            
-            return cell
-        }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "yourIngredientCell", for: indexPath)
-        let label = cell.viewWithTag(201) as! UILabel
-        label.text = yourIngredients[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath)
+        print("Hello")
         return cell
-        
     }
-    //https://letcreateanapp.com/2021/05/18/add-and-delete-cells-from-tableview-in-swift-5/
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("section: \(indexPath.section)")
-              print("row: \(indexPath.row)")
-        if indexPath.section == 0{
-            let ingredient = ingredients[indexPath.row]
-            ingredients.remove(at: indexPath.row)
-            yourIngredients.insert(ingredient, at: 0)
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .left)
-            tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .right)
-            tableView.endUpdates()
-            print(yourIngredients[0])
-          
-        }
-        if indexPath.section == 1{
-            let ingredient = yourIngredients[indexPath.row]
-            yourIngredients.remove(at: indexPath.row)
-            ingredients.insert(ingredient, at: 0)
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 1)], with: .left)
-            tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right)
-            tableView.endUpdates()
-          
-        }
-    }
+
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

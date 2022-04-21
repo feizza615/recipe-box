@@ -90,6 +90,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         if(segue.identifier == "viewIngredients"){
             let IngredientsView = segue.destination as! IngredientsTableViewController
             IngredientsView.info = sender as? CategoryModel
+    
         }
     }
     //MARK: Sources for passing category info via segue

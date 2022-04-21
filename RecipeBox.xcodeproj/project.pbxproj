@@ -17,6 +17,7 @@
 		975AB6692803ABBB00BA798B /* CategoryGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AB6682803ABBB00BA798B /* CategoryGridCell.swift */; };
 		979B09DA280A68D9008CE0BE /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B09D9280A68D9008CE0BE /* CategoryModel.swift */; };
 		979BB40C28106D8200B5BB81 /* IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BB40B28106D8100B5BB81 /* IngredientsTableViewController.swift */; };
+		979BB40E2810905000B5BB81 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BB40D2810905000B5BB81 /* RecipesTableViewController.swift */; };
 		97C01EF42808844B00540EBB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97C01EF32808844B00540EBB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		975AB6682803ABBB00BA798B /* CategoryGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGridCell.swift; sourceTree = "<group>"; };
 		979B09D9280A68D9008CE0BE /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		979BB40B28106D8100B5BB81 /* IngredientsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewController.swift; sourceTree = "<group>"; };
+		979BB40D2810905000B5BB81 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		97C01EF32808844B00540EBB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5534FA658294BE8A7A19399 /* Pods_RecipeBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F358E6FF012038482727B0 /* Pods-RecipeBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeBox.debug.xcconfig"; path = "Target Support Files/Pods-RecipeBox/Pods-RecipeBox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				975AB64E28033B6300BA798B /* AppDelegate.swift */,
 				975AB65028033B6300BA798B /* SceneDelegate.swift */,
 				975AB65428033B6300BA798B /* Main.storyboard */,
+				979BB40D2810905000B5BB81 /* RecipesTableViewController.swift */,
 				975AB6682803ABBB00BA798B /* CategoryGridCell.swift */,
 				975AB65728033B6700BA798B /* Assets.xcassets */,
 				975AB65928033B6700BA798B /* LaunchScreen.storyboard */,
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				975AB64F28033B6300BA798B /* AppDelegate.swift in Sources */,
+				979BB40E2810905000B5BB81 /* RecipesTableViewController.swift in Sources */,
 				975AB6692803ABBB00BA798B /* CategoryGridCell.swift in Sources */,
 				975AB6672803AA2600BA798B /* CategoryViewController.swift in Sources */,
 				979B09DA280A68D9008CE0BE /* CategoryModel.swift in Sources */,
