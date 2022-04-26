@@ -264,14 +264,14 @@
                         <color key="backgroundColor" red="0.99484437699999995" green="0.94826608899999998" blue="0.84429597850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" tag="100" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="ingredientCell" id="0Zc-A8-2hg">
-                                <rect key="frame" x="16" y="49.5" width="343" height="47"/>
+                                <rect key="frame" x="16" y="49.5" width="343" height="46.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Zc-A8-2hg" id="rUc-pR-XuH">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="47"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="46.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-Wz-11V">
-                                            <rect key="frame" x="24" y="11" width="42" height="24.5"/>
+                                            <rect key="frame" x="24" y="11" width="42" height="24"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
                                                     <attributes>
@@ -291,14 +291,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" tag="101" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="yourIngredientCell" id="u3t-iE-Qje">
-                                <rect key="frame" x="16" y="96.5" width="343" height="47"/>
+                                <rect key="frame" x="16" y="96" width="343" height="46.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u3t-iE-Qje" id="fpJ-so-irX">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="47"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="46.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="201" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XS7-QE-8Ht">
-                                            <rect key="frame" x="25" y="11" width="42" height="24.5"/>
+                                            <rect key="frame" x="25" y="11" width="42" height="24"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
                                                     <attributes>

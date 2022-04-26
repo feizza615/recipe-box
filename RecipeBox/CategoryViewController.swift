@@ -84,6 +84,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //navigation controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
@@ -100,6 +101,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let categoryInfo = catArray[indexPath.row]
         self.performSegue(withIdentifier: "viewIngredients", sender: categoryInfo)
+//        navigationController?.show(IngredientsTableViewController, sender: categoryInfo)
     }
 
 }

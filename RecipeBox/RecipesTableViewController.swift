@@ -24,7 +24,7 @@ class RecipesTableViewController: UITableViewController {
         let encodedText = ingredientText.addingPercentEncoding(
             withAllowedCharacters: CharacterSet.urlQueryAllowed)!
       let urlString = String(
-        format: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=08927d2539f34cd380ec63a2d230e57e&ignorePantry=true&number=1&ingredients=%@",encodedText)
+        format: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=08927d2539f34cd380ec63a2d230e57e&ignorePantry=true&ranking=2&number=5&ingredients=%@",encodedText)
       let url = URL(string: urlString)
       return url!
     }
@@ -32,20 +32,31 @@ class RecipesTableViewController: UITableViewController {
     func sendIngredients(){
         let url = spoonacularURL(ingredientText: "apple,+sugar,+flour,+sour cream")
         print("URL: '\(url)'")
-        if let jsonString = performStoreRequest(with: url) {
-          print("Received JSON string '\(jsonString)'")
-        }
+        if let data = performStoreRequest(with: url) {  // Modified
+             let results = parse(data: data)               // New line
+            print("Got results: \(results)")              // New line
+           }
+           tableView.reloadData()
     }
     
-    func performStoreRequest(with url: URL) -> String? {
+    func performStoreRequest(with url: URL) -> Data? {
       do {
-       return try String(contentsOf: url, encoding: .utf8)
+       return try Data(contentsOf: url)
       } catch {
        print("Download Error: \(error.localizedDescription)")
        return nil
       }
     }
-
+    func parse(data: Data)->[SearchResult]{
+        do {
+            let searchResult: [SearchResult] = try! JSONDecoder().decode([SearchResult].self, from: data)
+            return searchResult
+          } catch {
+            print("JSON Error: \(error)")
+            return []
+          }
+        
+    }
 
     // MARK: - Table view data source
 
@@ -56,7 +67,7 @@ class RecipesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 1
     }
 
     
@@ -113,3 +124,4 @@ class RecipesTableViewController: UITableViewController {
     */
 
 }
+

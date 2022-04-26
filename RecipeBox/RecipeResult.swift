@@ -6,16 +6,38 @@
 //
 
 import Foundation
-class ResultArray: Codable {
-    var resultCount = 0
-    var results = [Recipe]()
+//
+
+class SearchResult: Codable,CustomStringConvertible {
+  var id:Int = 0
+  var title: String = ""
+  var image: String = ""
+  var imageType: String? = ""
+  var usedIngredientCount: Int? = 0
+  var missedIngredientCount: Int? = 0
+  var missedIngredients:[IngredientDetail]
+  var usedIngredients:[IngredientDetail]
+  var unusedIngredients:[IngredientDetail]
+
+  var likes: Int? = 0
+    
+var description: String {
+    return "\nResult - Title: \(title)"
 }
 
-class Recipe: Codable {
-  var artistName: String? = ""
-  var trackName: String? = ""
-  
-  var name: String {
-    return trackName ?? ""
-  }
 }
+
+struct IngredientDetail:Codable{
+    var id:Int? = 0
+    var amount:Float? = 0
+    var unit:String? = ""
+    var unitLong:String? = ""
+    var unitShort:String? = ""
+    var aisle:String? = ""
+    var name:String? = ""
+    var original:String? = ""
+    var orginalName:String? = ""
+    var meta:[String?]
+    var image: String? = ""
+}
+
