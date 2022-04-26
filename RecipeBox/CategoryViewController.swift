@@ -85,24 +85,17 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     //navigation controller
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//        if(segue.identifier == "viewIngredients"){
-//            let IngredientsView = segue.destination as! IngredientsTableViewController
-//            IngredientsView.info = sender as? CategoryModel
-//
-//        }
-//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if(segue.identifier == "showIngredients"){
+            let IngredientsView = segue.destination as! IngredientsTableViewController
+            IngredientsView.info = sender as? CategoryModel
+            print("hi")
 
-       let navVC = segue.destination as? UINavigationController
-
-        if let tableVC = navVC?.viewControllers.first as? IngredientsTableViewController{
-            tableVC.info = sender as? CategoryModel
         }
-
     }
+   
     
     //MARK: Sources for passing category info via segue
     //https://developer.apple.com/documentation/uikit/uiviewcontroller/1621413-performsegue
@@ -110,9 +103,8 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let categoryInfo = catArray[indexPath.row]
-//        self.performSegue(withIdentifier: "viewIngredients", sender: categoryInfo)
-        let ingredientsVC = IngredientsTableViewController()
-        navigationController?.show(ingredientsVC, sender: categoryInfo)
+        self.performSegue(withIdentifier: "showIngredients", sender: categoryInfo)
+
     }
 
 }

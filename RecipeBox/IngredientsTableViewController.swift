@@ -16,32 +16,11 @@ class IngredientsTableViewController: UITableViewController {
     var yourIngredients:[String] = []
     
 
-//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    
-//    init(info: CategoryModel){
-//        super.init(nibName: nil, bundle: nil)
-//        self.info = info
-//    }
-//    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
         ingredients = info?.ingredients ?? []
         self.title = info?.categoryName
-//        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ingredientCell")
-//        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "yourIngredientCell")
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
