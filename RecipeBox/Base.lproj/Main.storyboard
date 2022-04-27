@@ -337,6 +337,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HVT-JD-Imj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.93741244079999997" green="0.41335791350000001" blue="0.35672068600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

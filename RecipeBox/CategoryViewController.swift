@@ -59,10 +59,6 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
                 print("DONE")
               }
         }
-       
-       
-     
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -91,8 +87,6 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         if(segue.identifier == "showIngredients"){
             let IngredientsView = segue.destination as! IngredientsTableViewController
             IngredientsView.info = sender as? CategoryModel
-            print("hi")
-
         }
     }
    
@@ -104,7 +98,6 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let categoryInfo = catArray[indexPath.row]
         self.performSegue(withIdentifier: "showIngredients", sender: categoryInfo)
-
     }
 
 }

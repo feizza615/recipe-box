@@ -15,9 +15,9 @@ class SearchResult: Codable,CustomStringConvertible {
   var imageType: String? = ""
   var usedIngredientCount: Int? = 0
   var missedIngredientCount: Int? = 0
-  var missedIngredients:[IngredientDetail]
-  var usedIngredients:[IngredientDetail]
-  var unusedIngredients:[IngredientDetail]
+//  var missedIngredients:[IngredientDetail]
+//  var usedIngredients:[IngredientDetail]
+//  var unusedIngredients:[IngredientDetail]
 
   var likes: Int? = 0
     
