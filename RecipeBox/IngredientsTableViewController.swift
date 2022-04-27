@@ -12,10 +12,6 @@ import UIKit
 class IngredientsTableViewController: UITableViewController {
     
     var info: CategoryModel?
-
-    
-    
-
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +20,6 @@ class IngredientsTableViewController: UITableViewController {
         //yourIngredients = info?.yourIngredients ??[]
         self.title = info?.categoryName
         
-        print("Documents folder is \(documentsDirectory())")
-         print("Data file path is \(dataFilePath())")
     }
 
     // MARK: - Table view data source
@@ -75,9 +69,7 @@ class IngredientsTableViewController: UITableViewController {
             tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .left)
             tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .right)
             tableView.endUpdates()
-            print(info?.yourIngredients?[0])
-            saveIngredients()
-          
+     
         }
         if indexPath.section == 1{
             let ingredient = info?.yourIngredients?[indexPath.row]
@@ -87,58 +79,57 @@ class IngredientsTableViewController: UITableViewController {
             tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 1)], with: .left)
             tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right)
             tableView.endUpdates()
-            saveIngredients()
-          
+
         }
     }
     
-    func documentsDirectory() -> URL {
-      let paths = FileManager.default.urls(
-        for: .documentDirectory,
-        in: .userDomainMask)
-      return paths[0]
-    }
-
-    func dataFilePath() -> URL {
-      return documentsDirectory().appendingPathComponent("Ingredients.plist")
-    }
-    
-    func saveIngredients() {
-      // 1
-      let encoder = PropertyListEncoder()
-      // 2
-      do {
-        // 3
-        let categoryData = try encoder.encode(info)
-
-        // 4
-
-          try categoryData.write(
-            to: dataFilePath(),
-            options: Data.WritingOptions.atomic)
-        // 5
-      } catch {
-        // 6
-        print("Error encoding item array: \(error.localizedDescription)")
-      }
-    }
-    func loadIngredients() {
-      // 1
-      let path = dataFilePath()
-      // 2
-      if let data = try? Data(contentsOf: path) {
-        // 3
-        let decoder = PropertyListDecoder()
-        do {
-          // 4
-          info = try decoder.decode(
-            CategoryModel.self,
-            from: data)
-        } catch {
-          print("Error decoding item array: \(error.localizedDescription)")
-        }
-      }
-    }
+//    func documentsDirectory() -> URL {
+//      let paths = FileManager.default.urls(
+//        for: .documentDirectory,
+//        in: .userDomainMask)
+//      return paths[0]
+//    }
+//
+//    func dataFilePath() -> URL {
+//      return documentsDirectory().appendingPathComponent("Ingredients.plist")
+//    }
+//
+//    func saveIngredients() {
+//      // 1
+//      let encoder = PropertyListEncoder()
+//      // 2
+//      do {
+//        // 3
+//        let categoryData = try encoder.encode(info)
+//
+//        // 4
+//
+//          try categoryData.write(
+//            to: dataFilePath(),
+//            options: Data.WritingOptions.atomic)
+//        // 5
+//      } catch {
+//        // 6
+//        print("Error encoding item array: \(error.localizedDescription)")
+//      }
+//    }
+//    func loadIngredients() {
+//      // 1
+//      let path = dataFilePath()
+//      // 2
+//      if let data = try? Data(contentsOf: path) {
+//        // 3
+//        let decoder = PropertyListDecoder()
+//        do {
+//          // 4
+//          info = try decoder.decode(
+//            CategoryModel.self,
+//            from: data)
+//        } catch {
+//          print("Error decoding item array: \(error.localizedDescription)")
+//        }
+//      }
+//    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
