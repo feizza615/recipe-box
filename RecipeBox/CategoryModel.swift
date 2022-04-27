@@ -7,13 +7,15 @@
 
 import Foundation
 
-class CategoryModel{
+class CategoryModel:NSObject, Codable{
     var categoryName: String?
     var categoryImage: String?
     var ingredients:[String]?
+    var yourIngredients:[String]?
     init(categoryName: String?, categoryImage:String?, ingredients:[String]?){
         self.categoryName = categoryName
         self.categoryImage = categoryImage
         self.ingredients = ingredients
+        self.yourIngredients = []
     }
 }

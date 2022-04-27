@@ -20,7 +20,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -99,5 +99,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         let categoryInfo = catArray[indexPath.row]
         self.performSegue(withIdentifier: "showIngredients", sender: categoryInfo)
     }
+
+    
 
 }

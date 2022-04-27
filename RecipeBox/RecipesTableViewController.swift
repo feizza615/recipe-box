@@ -12,6 +12,7 @@ class RecipesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sendIngredients()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -89,6 +90,8 @@ class RecipesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 5
     }
+   
+    
 
     /*
     // Override to support conditional editing of the table view.
