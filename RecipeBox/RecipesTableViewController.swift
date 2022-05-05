@@ -12,7 +12,9 @@ class RecipesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sendIngredients()
-
+        
+        let cellNib = UINib(nibName: "RecipeResultCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "recipeCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -73,7 +75,15 @@ class RecipesTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath)
+        let cellIdentifier = "recipeCell"
+
+        var cell: UITableViewCell! = tableView.dequeueReusableCell(
+          withIdentifier: cellIdentifier)
+        if cell == nil {
+          cell = UITableViewCell(
+            style: .subtitle, reuseIdentifier: cellIdentifier)
+        }
+
         print("Hello")
         return cell
     }
