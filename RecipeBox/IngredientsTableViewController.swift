@@ -6,22 +6,47 @@
 //
 
 import UIKit
-
+import AudioToolbox
 //https://stackoverflow.com/questions/62989843/can-we-return-two-arrays-in-one-tableview-numberofrowsinsection-without-using-se
 
 class IngredientsTableViewController: UITableViewController {
     
     var info: CategoryModel?
-   
+    var soundID: SystemSoundID = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //loadIngredients()
         //ingredients = info?.ingredients ?? []
         //yourIngredients = info?.yourIngredients ??[]
+        loadSoundEffect("Sound.caf")
         self.title = info?.categoryName
         
     }
+    
+    //MARK: - Audio effect Functions
+    func loadSoundEffect(_ name: String) {
+        print("hello")
+      if let path = Bundle.main.path(forResource: name, ofType: nil) {
+        let fileURL = URL(fileURLWithPath: path, isDirectory: false)
+        let error = AudioServicesCreateSystemSoundID(fileURL as CFURL, &soundID)
+        if error != kAudioServicesNoError {
+          print("Error code \(error) loading sound: \(path)")
+        }
+      }
+    }
 
+    func unloadSoundEffect() {
+      AudioServicesDisposeSystemSoundID(soundID)
+      soundID = 0
+    }
+    
+    func playSoundEffect() {
+        print("TRYING TO PLAY SOUND")
+      AudioServicesPlaySystemSound(soundID)
+    }
+
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,6 +86,7 @@ class IngredientsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("section: \(indexPath.section)")
               print("row: \(indexPath.row)")
+        playSoundEffect()
         if indexPath.section == 0{
             let ingredient = info?.ingredients?[indexPath.row]
             info?.ingredients?.remove(at: indexPath.row)
@@ -79,7 +105,7 @@ class IngredientsTableViewController: UITableViewController {
             tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 1)], with: .left)
             tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right)
             tableView.endUpdates()
-
+            
         }
     }
     
