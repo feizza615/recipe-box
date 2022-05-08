@@ -114,8 +114,10 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7DT-Vm-cF3">
                                                     <rect key="frame" x="15" y="8" width="156" height="140"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="156" id="4y9-Hk-ZZS"/>
                                                         <constraint firstAttribute="height" constant="170" id="KYJ-Uf-dOm"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="170" id="KnR-Br-CwU"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="140" id="cCC-ml-Rh9"/>
                                                         <constraint firstAttribute="width" constant="156" id="hp4-fn-d9H"/>
                                                     </constraints>
                                                 </imageView>
@@ -197,6 +199,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recipes" id="iOQ-mL-Q6A"/>
+                    <connections>
+                        <segue destination="Lc4-NM-kIJ" kind="show" identifier="toRecipeDetails" id="Blk-K9-bJF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r6-yK-f7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,7 +210,7 @@
         <!--Recipe-->
         <scene sceneID="Zel-wG-VYp">
             <objects>
-                <viewController title="Recipe" id="Lc4-NM-kIJ" sceneMemberID="viewController">
+                <viewController title="Recipe" id="Lc4-NM-kIJ" customClass="RecipeDetailsViewController" customModule="RecipeBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dFE-35-cu0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

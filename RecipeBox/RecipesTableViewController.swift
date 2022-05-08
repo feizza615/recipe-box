@@ -89,9 +89,29 @@ class RecipesTableViewController: UITableViewController {
         return cell
     }
     
-    //MARK: Next two functions (to add space between rows) came from here:
-    //https://andrew-lundy.medium.com/adding-space-between-the-cells-of-a-uitableview-590a0cfd2e22
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if(segue.identifier == "toRecipeDetails"){
+            let RecipeDetailsView = segue.destination as! RecipeDetailsViewController
+            //IngredientsView.info = sender as? CategoryModel
+        }
+    }
+   
+    
+    //MARK: Sources for passing category info via segue
+    //https://developer.apple.com/documentation/uikit/uiviewcontroller/1621413-performsegue
+    //https://odenza.medium.com/how-to-pass-parameters-to-another-view-when-using-performsegue-in-swift-5-dd96832b412d
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "toRecipeDetails", sender: nil)
+    }
+
+
+    
+//    //MARK: Next two functions (to add space between rows) came from here:
+//    //https://andrew-lundy.medium.com/adding-space-between-the-cells-of-a-uitableview-590a0cfd2e22
+//    
 //    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        let headerView = UIView()
 //        headerView.backgroundColor = view.backgroundColor
@@ -102,7 +122,8 @@ class RecipesTableViewController: UITableViewController {
 //        return 5
 //    }
 //   
-//    
+
+
 
     /*
     // Override to support conditional editing of the table view.
