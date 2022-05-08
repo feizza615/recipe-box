@@ -191,44 +191,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCell" rowHeight="123" id="sZM-tI-Awq">
-                                <rect key="frame" x="16" y="49.5" width="343" height="123"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sZM-tI-Awq" id="YPV-lh-9GD">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="123"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cPT-oS-JQm">
-                                            <rect key="frame" x="6" y="6" width="116" height="109"/>
-                                            <color key="tintColor" red="0.93741244079999997" green="0.41335791350000001" blue="0.35672068600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="116" id="mbA-AP-eiN"/>
-                                            </constraints>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQo-nm-vzp">
-                                            <rect key="frame" x="137" y="11" width="39" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="tQo-nm-vzp" firstAttribute="top" secondItem="YPV-lh-9GD" secondAttribute="topMargin" id="1S7-vp-ok2"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="tQo-nm-vzp" secondAttribute="bottom" constant="80" id="73M-EM-Swf"/>
-                                        <constraint firstItem="tQo-nm-vzp" firstAttribute="leading" secondItem="cPT-oS-JQm" secondAttribute="trailing" constant="15" id="PPC-6H-PdM"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="cPT-oS-JQm" secondAttribute="bottom" constant="-4" id="RIm-Yi-bqi"/>
-                                        <constraint firstItem="cPT-oS-JQm" firstAttribute="top" secondItem="YPV-lh-9GD" secondAttribute="topMargin" constant="-6" id="emW-pW-hEO"/>
-                                        <constraint firstItem="cPT-oS-JQm" firstAttribute="leading" secondItem="YPV-lh-9GD" secondAttribute="leadingMargin" constant="-10" id="kwG-UQ-VlO"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.99484437699999995" green="0.94826608899999998" blue="0.84429597850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <segue destination="Lc4-NM-kIJ" kind="show" id="5Wm-QR-mG6"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="0cV-ar-gub" id="b24-Fo-tFe"/>
                             <outlet property="delegate" destination="0cV-ar-gub" id="NZA-Gb-5yu"/>
@@ -354,7 +316,6 @@
     <resources>
         <image name="coverGraphic" width="271" height="474"/>
         <image name="recipeBox" width="2459" height="832"/>
-        <image name="square" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -14,7 +14,7 @@ class RecipesTableViewController: UITableViewController {
         sendIngredients()
         
         let cellNib = UINib(nibName: "RecipeResultCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: "recipeCell")
+        tableView.register(cellNib, forCellReuseIdentifier: "RecipeResultCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -65,24 +65,24 @@ class RecipesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 3
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "recipeCell"
+        let cellIdentifier = "RecipeResultCell"
 
-        var cell: UITableViewCell! = tableView.dequeueReusableCell(
+        let cell: UITableViewCell! = tableView.dequeueReusableCell(
           withIdentifier: cellIdentifier)
-        if cell == nil {
-          cell = UITableViewCell(
-            style: .subtitle, reuseIdentifier: cellIdentifier)
-        }
+//        if cell == nil {
+//          cell = UITableViewCell(
+//            style: .subtitle, reuseIdentifier: cellIdentifier)
+//        }
 
         print("Hello")
         return cell
@@ -91,17 +91,17 @@ class RecipesTableViewController: UITableViewController {
     //MARK: Next two functions (to add space between rows) came from here:
     //https://andrew-lundy.medium.com/adding-space-between-the-cells-of-a-uitableview-590a0cfd2e22
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = view.backgroundColor
-        return headerView
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
-    }
-   
-    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UIView()
+//        headerView.backgroundColor = view.backgroundColor
+//        return headerView
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 5
+//    }
+//   
+//    
 
     /*
     // Override to support conditional editing of the table view.
