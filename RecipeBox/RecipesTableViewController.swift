@@ -77,8 +77,9 @@ class RecipesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "RecipeResultCell"
 
-        let cell: UITableViewCell! = tableView.dequeueReusableCell(
-          withIdentifier: cellIdentifier)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: cellIdentifier,
+            for: indexPath) as! RecipeResultCell
 //        if cell == nil {
 //          cell = UITableViewCell(
 //            style: .subtitle, reuseIdentifier: cellIdentifier)
