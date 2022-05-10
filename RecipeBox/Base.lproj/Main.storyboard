@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Opening View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="OpeningViewController" customModule="RecipeBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,25 +61,51 @@
                                     <constraint firstAttribute="height" constant="162" id="xEU-Mn-bnv"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basketBottom" translatesAutoresizingMaskIntoConstraints="NO" id="CHg-5m-JCj">
+                                <rect key="frame" x="0.0" y="273" width="375" height="394"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="394" id="yOz-vz-dHy"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="basketTop" translatesAutoresizingMaskIntoConstraints="NO" id="Skf-om-Wib">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="336"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="oKS-kn-sEL"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.99484437699999995" green="0.94826608899999998" blue="0.84429597850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CbY-IH-IAK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Ju-jk-QWG"/>
+                            <constraint firstItem="Skf-om-Wib" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1Lf-ls-r9g"/>
                             <constraint firstItem="CbY-IH-IAK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="1xk-r6-hBj"/>
                             <constraint firstItem="7hx-rT-NCu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="4E8-yG-wU4"/>
                             <constraint firstItem="CbY-IH-IAK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BqA-lS-Nx1"/>
+                            <constraint firstAttribute="bottom" secondItem="CHg-5m-JCj" secondAttribute="bottom" id="Flg-in-eMX"/>
+                            <constraint firstItem="CHg-5m-JCj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Isg-MQ-QfI"/>
                             <constraint firstItem="7hx-rT-NCu" firstAttribute="centerX" secondItem="CbY-IH-IAK" secondAttribute="centerX" id="KZh-Y4-9pR"/>
+                            <constraint firstItem="Skf-om-Wib" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Tc8-pM-qCS"/>
                             <constraint firstItem="CbY-IH-IAK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tga-Yd-LWz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7hx-rT-NCu" secondAttribute="bottom" constant="31" id="WNm-kd-h9N"/>
                             <constraint firstItem="sAQ-0d-s3a" firstAttribute="centerX" secondItem="7hx-rT-NCu" secondAttribute="centerX" id="ap9-QC-hlI"/>
                             <constraint firstItem="tnv-WY-HeT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bo4-EP-5zP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tnv-WY-HeT" secondAttribute="trailing" constant="56" id="cIf-Lb-Zsf"/>
+                            <constraint firstItem="CHg-5m-JCj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eBr-2l-ecP"/>
+                            <constraint firstItem="Skf-om-Wib" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fVa-xd-iAz"/>
+                            <constraint firstItem="Skf-om-Wib" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pV5-LD-5Vc"/>
                             <constraint firstItem="sAQ-0d-s3a" firstAttribute="leading" secondItem="tnv-WY-HeT" secondAttribute="leading" id="rsj-yo-ymy"/>
+                            <constraint firstItem="CHg-5m-JCj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tO5-Ri-9Wc"/>
                             <constraint firstItem="sAQ-0d-s3a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="yRV-Me-Dq5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sAQ-0d-s3a" secondAttribute="bottom" constant="66" id="yUi-4P-T33"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="basketBottom" destination="CHg-5m-JCj" id="xPT-Bu-ipA"/>
+                        <outlet property="basketBottomConstraint" destination="Flg-in-eMX" id="QqQ-gT-IIZ"/>
+                        <outlet property="basketTop" destination="CHg-5m-JCj" id="Qnn-tL-nOa"/>
+                        <outlet property="basketTopConstraint" destination="1Lf-ls-r9g" id="tUv-FL-1zP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,14 +259,14 @@
                         <color key="backgroundColor" red="0.99484437699999995" green="0.94826608899999998" blue="0.84429597850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" tag="100" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="ingredientCell" id="0Zc-A8-2hg">
-                                <rect key="frame" x="16" y="49.5" width="343" height="47"/>
+                                <rect key="frame" x="16" y="49.5" width="343" height="46.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Zc-A8-2hg" id="rUc-pR-XuH">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="47"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="46.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-Wz-11V">
-                                            <rect key="frame" x="24" y="11" width="42" height="24.5"/>
+                                            <rect key="frame" x="24" y="11" width="42" height="24"/>
                                             <accessibility key="accessibilityConfiguration" identifier="ingredientLabel"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
@@ -261,14 +287,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" tag="101" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="yourIngredientCell" id="u3t-iE-Qje">
-                                <rect key="frame" x="16" y="96.5" width="343" height="47"/>
+                                <rect key="frame" x="16" y="96" width="343" height="46.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u3t-iE-Qje" id="fpJ-so-irX">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="47"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="46.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="201" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XS7-QE-8Ht">
-                                            <rect key="frame" x="25" y="11" width="42" height="24.5"/>
+                                            <rect key="frame" x="25" y="11" width="42" height="24"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
                                                     <attributes>
@@ -319,6 +345,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="basketBottom" width="632" height="586"/>
+        <image name="basketTop" width="304" height="293"/>
         <image name="coverGraphic" width="271" height="474"/>
         <image name="recipeBox" width="2459" height="832"/>
         <systemColor name="systemBackgroundColor">
