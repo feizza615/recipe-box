@@ -8,7 +8,7 @@
 import UIKit
 
 class RecipesTableViewController: UITableViewController {
-    
+    var results: [SearchResult] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         sendIngredients()
@@ -36,7 +36,7 @@ class RecipesTableViewController: UITableViewController {
         let url = spoonacularURL(ingredientText: "apple,+sugar,+flour,+sour cream")
         print("URL: '\(url)'")
         if let data = performStoreRequest(with: url) {  // Modified
-             let results = parse(data: data)               // New line
+            results = parse(data: data)               // New line
             print("Got results: \(results)")              // New line
            }
            tableView.reloadData()
@@ -70,7 +70,7 @@ class RecipesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 5
     }
 
     
@@ -80,24 +80,22 @@ class RecipesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: cellIdentifier,
             for: indexPath) as! RecipeResultCell
-//        if cell == nil {
-//          cell = UITableViewCell(
-//            style: .subtitle, reuseIdentifier: cellIdentifier)
-//        }
+        let recipeInfo = results[indexPath.row]
+        cell.recipeNameLabel.text = recipeInfo.title
 
         print("Hello")
         return cell
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if(segue.identifier == "toRecipeDetails"){
-            let RecipeDetailsView = segue.destination as! RecipeDetailsViewController
-            //IngredientsView.info = sender as? CategoryModel
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//        if(segue.identifier == "toRecipeDetails"){
+//            let RecipeDetailsView = segue.destination as! RecipeDetailsViewController
+//            //IngredientsView.info = sender as? CategoryModel
+//        }
+//    }
    
     
     //MARK: Sources for passing category info via segue
