@@ -9,12 +9,13 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController {
     var results: [SearchResult] = []
-    var info: CategoryModel?
+    var info=[CategoryModel]()
     var ingredientsList: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        sendIngredients()
+        gatherIngredients()
+      //  sendIngredients()
         
         let cellNib = UINib(nibName: "RecipeResultCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "RecipeResultCell")
@@ -25,26 +26,39 @@ class RecipesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     func gatherIngredients(){
-        //for
+        for category in info{
+            //https://www.tutorialkart.com/swift-tutorial/swift-array-append-another-array/
+            ingredientsList.append(contentsOf:category.yourIngredients!)
+        }
+        sendIngredients(ingredientText: processIngredients(ingredientsList: ingredientsList) )
+    }
+    func processIngredients(ingredientsList: [String])->String{
+        var ingredientString = ""
+        for ingredient in ingredientsList{
+            ingredientString.append(",+")
+            ingredientString.append(ingredient)
+        }
+        return ingredientString
     }
     // MARK: - Creates URL
     func spoonacularURL(ingredientText: String) -> URL {
         let encodedText = ingredientText.addingPercentEncoding(
             withAllowedCharacters: CharacterSet.urlQueryAllowed)!
       let urlString = String(
-        format: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=08927d2539f34cd380ec63a2d230e57e&ignorePantry=true&ranking=2&number=5&ingredients=%@",encodedText)
+        format: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=08927d2539f34cd380ec63a2d230e57e&ignorePantry=true&ranking=2&number=1&ingredients=%@",encodedText)
       let url = URL(string: urlString)
+        
       return url!
     }
     
-    func sendIngredients(){
-        let url = spoonacularURL(ingredientText: "apple,+sugar,+flour,+sour cream")
+    func sendIngredients(ingredientText:String){
+        let url = spoonacularURL(ingredientText: ingredientText)
         print("URL: '\(url)'")
-        if let data = performStoreRequest(with: url) {  // Modified
-            results = parse(data: data)               // New line
-            print("Got results: \(results)")              // New line
-           }
-           tableView.reloadData()
+//        if let data = performStoreRequest(with: url) {  // Modified
+//            results = parse(data: data)               // New line
+//            print("Got results: \(results)")              // New line
+//           }
+//           tableView.reloadData()
     }
     
     func performStoreRequest(with url: URL) -> Data? {
@@ -75,7 +89,7 @@ class RecipesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 1
     }
 
     

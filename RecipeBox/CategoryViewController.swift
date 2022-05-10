@@ -92,7 +92,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         }else if(segue.identifier == "showRecipes"){
             
             let RecipeResultsView = segue.destination as! RecipesTableViewController
-            RecipeResultsView.info = sender as? CategoryModel
+            RecipeResultsView.info = (sender as? [CategoryModel])!
         }
     }
    
