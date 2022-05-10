@@ -14,6 +14,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     private let database = Database.database().reference()
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var findButton: UIButton!
     
     var catArray=[CategoryModel]()
     
@@ -22,11 +23,12 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.viewDidLoad()
        
         // Do any additional setup after loading the view.
+        findButton.addTarget(self, action: #selector(findRecipes), for: .touchUpInside)
         collectionView.delegate = self
         collectionView.dataSource = self
         self.collectionView.reloadData()
         
-//        Lines 22-26 -> change navigation title font from: https://www.hackingwithswift.com/example-code/uikit/how-to-style-the-font-in-a-uinavigationbars-title
+        //        Lines 22-26 -> change navigation title font from: https://www.hackingwithswift.com/example-code/uikit/how-to-style-the-font-in-a-uinavigationbars-title
         let attrs = [
             NSAttributedString.Key.font: UIFont(name: "Avenir", size: 24)!
         ]
@@ -87,6 +89,10 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         if(segue.identifier == "showIngredients"){
             let IngredientsView = segue.destination as! IngredientsTableViewController
             IngredientsView.info = sender as? CategoryModel
+        }else if(segue.identifier == "showRecipes"){
+            
+            let RecipeResultsView = segue.destination as! RecipesTableViewController
+            RecipeResultsView.info = sender as? CategoryModel
         }
     }
    
@@ -99,7 +105,10 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         let categoryInfo = catArray[indexPath.row]
         self.performSegue(withIdentifier: "showIngredients", sender: categoryInfo)
     }
-
+    //https://www.zerotoappstore.com/set-action-listener-swift.html
+   @objc func findRecipes() {
+       self.performSegue(withIdentifier: "showRecipes", sender: catArray)
+    }
     
 
 }

@@ -11,7 +11,7 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeResultCell" id="4mT-Z8-Wys" customClass="RecipeResultCell" customModule="RecipeBox" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4mT-Z8-Wys" id="hOx-MW-RKy">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4mT-Z8-Wys" id="hOx-MW-RKy">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -37,18 +37,34 @@
                         </constraints>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iC1-Rg-PGP">
+                        <rect key="frame" x="120" y="57" width="34" height="19.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" size="14" name="Avenir-Book"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="8hi-4y-fWf" firstAttribute="top" secondItem="hOx-MW-RKy" secondAttribute="top" constant="4" id="AZu-a3-2ug"/>
                     <constraint firstAttribute="trailingMargin" secondItem="JEe-SR-GIG" secondAttribute="trailing" constant="11" id="BTG-9O-PSn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="iC1-Rg-PGP" secondAttribute="bottom" constant="11" id="G6L-Hf-5vn"/>
                     <constraint firstItem="8hi-4y-fWf" firstAttribute="leading" secondItem="hOx-MW-RKy" secondAttribute="leading" constant="9" id="MGE-QP-8e5"/>
+                    <constraint firstItem="iC1-Rg-PGP" firstAttribute="leading" secondItem="8hi-4y-fWf" secondAttribute="trailing" constant="21" id="PUT-tK-b2w"/>
                     <constraint firstItem="JEe-SR-GIG" firstAttribute="top" secondItem="hOx-MW-RKy" secondAttribute="topMargin" constant="13" id="QLe-RV-exc"/>
                     <constraint firstItem="JEe-SR-GIG" firstAttribute="leading" secondItem="8hi-4y-fWf" secondAttribute="trailing" constant="21" id="ShR-BT-pd0"/>
+                    <constraint firstItem="iC1-Rg-PGP" firstAttribute="top" secondItem="JEe-SR-GIG" secondAttribute="bottom" constant="8" symbolic="YES" id="ccy-me-NBJ"/>
                     <constraint firstAttribute="bottom" secondItem="8hi-4y-fWf" secondAttribute="bottom" constant="4" id="dFN-6H-tuN"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.99484437699999995" green="0.94826608899999998" blue="0.84429597850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
+                <outlet property="recipeCountLabel" destination="iC1-Rg-PGP" id="pS0-pN-JaE"/>
                 <outlet property="recipeImageView" destination="8hi-4y-fWf" id="sNG-jH-o3C"/>
                 <outlet property="recipeNameLabel" destination="JEe-SR-GIG" id="fXt-Gj-CwB"/>
             </connections>

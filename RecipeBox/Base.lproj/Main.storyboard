@@ -193,9 +193,6 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="0cV-ar-gub" kind="show" id="nZF-na-MMb"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0eC-Oj-4e2"/>
@@ -204,7 +201,9 @@
                     <navigationItem key="navigationItem" title="What's in Your Kitchen?" id="dIX-8Z-nhl"/>
                     <connections>
                         <outlet property="collectionView" destination="Pkn-61-6a5" id="RYt-3G-hDH"/>
+                        <outlet property="findButton" destination="fiL-yg-ATA" id="Enp-OI-KfD"/>
                         <segue destination="1hT-AS-TFL" kind="show" identifier="showIngredients" id="J0m-gL-DOx"/>
+                        <segue destination="0cV-ar-gub" kind="show" identifier="showRecipes" id="faY-NV-DJx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhj-at-lWN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -226,7 +225,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Recipes" id="iOQ-mL-Q6A"/>
                     <connections>
-                        <segue destination="Lc4-NM-kIJ" kind="show" identifier="toRecipeDetails" id="Blk-K9-bJF"/>
+                        <segue destination="Lc4-NM-kIJ" kind="show" identifier="toRecipeDetails" id="nyj-Hq-ThR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r6-yK-f7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

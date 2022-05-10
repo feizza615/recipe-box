@@ -41,3 +41,4 @@ struct IngredientDetail:Codable{
     var image: String? = ""
 }
 
+

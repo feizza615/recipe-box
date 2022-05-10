@@ -6,10 +6,12 @@
 //
 
 import UIKit
-
+var downloadTask: URLSessionDownloadTask?
 class RecipeResultCell: UITableViewCell {
   @IBOutlet weak var recipeNameLabel: UILabel!
-  @IBOutlet weak var recipeImageView: UIImageView!
+    @IBOutlet weak var recipeCountLabel: UILabel!
+    @IBOutlet weak var recipeImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,13 @@ class RecipeResultCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func configure(for result: SearchResult) {
+      recipeNameLabel.text = result.title
+        recipeCountLabel.text = "\(result.usedIngredientCount ?? -1) ingredients used"
+      recipeImageView.image = UIImage(systemName: "square")
+        if let imageURL = URL(string: result.image) {
+          downloadTask = recipeImageView.loadImage(url: imageURL)
+        }
+
+      }
 }

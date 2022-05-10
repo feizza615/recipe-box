@@ -9,6 +9,9 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController {
     var results: [SearchResult] = []
+    var info: CategoryModel?
+    var ingredientsList: [String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         sendIngredients()
@@ -21,7 +24,9 @@ class RecipesTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+    func gatherIngredients(){
+        //for
+    }
     // MARK: - Creates URL
     func spoonacularURL(ingredientText: String) -> URL {
         let encodedText = ingredientText.addingPercentEncoding(
@@ -81,21 +86,21 @@ class RecipesTableViewController: UITableViewController {
             withIdentifier: cellIdentifier,
             for: indexPath) as! RecipeResultCell
         let recipeInfo = results[indexPath.row]
-        cell.recipeNameLabel.text = recipeInfo.title
-
+        //cell.recipeNameLabel.text = recipeInfo.title
+        cell.configure(for: recipeInfo)
         print("Hello")
         return cell
     }
     
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//        if(segue.identifier == "toRecipeDetails"){
-//            let RecipeDetailsView = segue.destination as! RecipeDetailsViewController
-//            //IngredientsView.info = sender as? CategoryModel
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if(segue.identifier == "toRecipeDetails"){
+            let RecipeDetailsView = segue.destination as! RecipeDetailsViewController
+            //IngredientsView.info = sender as? CategoryModel
+        }
+    }
    
     
     //MARK: Sources for passing category info via segue
