@@ -45,9 +45,8 @@ class RecipesTableViewController: UITableViewController {
         let encodedText = ingredientText.addingPercentEncoding(
             withAllowedCharacters: CharacterSet.urlQueryAllowed)!
       let urlString = String(
-        format: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=08927d2539f34cd380ec63a2d230e57e&ignorePantry=true&ranking=2&number=15&ingredients=%@",encodedText)
+        format: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=08927d2539f34cd380ec63a2d230e57e&ignorePantry=true&ranking=1&number=5&ingredients=%@",encodedText)
       let url = URL(string: urlString)
-        
       return url!
     }
     
