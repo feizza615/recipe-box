@@ -45,7 +45,7 @@ class RecipesTableViewController: UITableViewController {
         let encodedText = ingredientText.addingPercentEncoding(
             withAllowedCharacters: CharacterSet.urlQueryAllowed)!
       let urlString = String(
-        format: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=08927d2539f34cd380ec63a2d230e57e&ignorePantry=true&ranking=2&number=1&ingredients=%@",encodedText)
+        format: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=08927d2539f34cd380ec63a2d230e57e&ignorePantry=true&ranking=2&number=15&ingredients=%@",encodedText)
       let url = URL(string: urlString)
         
       return url!
@@ -54,11 +54,11 @@ class RecipesTableViewController: UITableViewController {
     func sendIngredients(ingredientText:String){
         let url = spoonacularURL(ingredientText: ingredientText)
         print("URL: '\(url)'")
-//        if let data = performStoreRequest(with: url) {  // Modified
-//            results = parse(data: data)               // New line
-//            print("Got results: \(results)")              // New line
-//           }
-//           tableView.reloadData()
+        if let data = performStoreRequest(with: url) {  // Modified
+            results = parse(data: data)               // New line
+            print("Got results: \(results)")              // New line
+           }
+           tableView.reloadData()
     }
     
     func performStoreRequest(with url: URL) -> Data? {
@@ -89,7 +89,7 @@ class RecipesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return results.count
     }
 
     
