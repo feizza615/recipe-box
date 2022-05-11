@@ -247,8 +247,8 @@
                                     <constraint firstAttribute="width" constant="375" id="nty-Kl-jH1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VA4-rd-ZkB">
-                                <rect key="frame" x="16" y="265" width="51" height="27.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VA4-rd-ZkB">
+                                <rect key="frame" x="16" y="265" width="350" height="27.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
@@ -260,13 +260,41 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xO9-uf-X7X">
+                                <rect key="frame" x="16" y="300" width="91" height="24"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Ingredients">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Avenir-Heavy"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmK-hH-dia">
+                                <rect key="frame" x="16" y="332" width="343" height="23.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Avenir-Book"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NRv-gN-mFW"/>
                         <color key="backgroundColor" red="0.99484437699999995" green="0.94826608899999998" blue="0.84429597850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="NRv-gN-mFW" firstAttribute="trailing" secondItem="VA4-rd-ZkB" secondAttribute="trailing" constant="9" id="1en-9N-41s"/>
                             <constraint firstItem="OL3-mK-7xg" firstAttribute="top" secondItem="NRv-gN-mFW" secondAttribute="top" id="2Ph-hj-Yov"/>
                             <constraint firstItem="OL3-mK-7xg" firstAttribute="trailing" secondItem="NRv-gN-mFW" secondAttribute="trailing" id="3gx-rv-FVJ"/>
                             <constraint firstItem="VA4-rd-ZkB" firstAttribute="leading" secondItem="NRv-gN-mFW" secondAttribute="leading" constant="16" id="CB3-Z6-jgQ"/>
+                            <constraint firstItem="kmK-hH-dia" firstAttribute="top" secondItem="xO9-uf-X7X" secondAttribute="bottom" constant="8" symbolic="YES" id="Hcv-PS-Y3q"/>
+                            <constraint firstItem="NRv-gN-mFW" firstAttribute="trailing" secondItem="kmK-hH-dia" secondAttribute="trailing" constant="16" id="PCJ-3E-KZH"/>
+                            <constraint firstItem="kmK-hH-dia" firstAttribute="leading" secondItem="NRv-gN-mFW" secondAttribute="leading" constant="16" id="Qmt-DU-JR2"/>
+                            <constraint firstItem="xO9-uf-X7X" firstAttribute="top" secondItem="VA4-rd-ZkB" secondAttribute="bottom" constant="7.5" id="bf7-qh-Rrs"/>
+                            <constraint firstItem="xO9-uf-X7X" firstAttribute="leading" secondItem="NRv-gN-mFW" secondAttribute="leading" constant="16" id="dgM-TU-jcz"/>
                             <constraint firstItem="OL3-mK-7xg" firstAttribute="leading" secondItem="NRv-gN-mFW" secondAttribute="leading" id="hFf-hC-ouE"/>
                             <constraint firstItem="VA4-rd-ZkB" firstAttribute="top" secondItem="OL3-mK-7xg" secondAttribute="bottom" constant="8" symbolic="YES" id="vpR-Ei-txr"/>
                         </constraints>
@@ -274,6 +302,7 @@
                     <navigationItem key="navigationItem" id="39H-0i-Wl9"/>
                     <connections>
                         <outlet property="recipeImage" destination="OL3-mK-7xg" id="25z-gz-t1I"/>
+                        <outlet property="recipeIngredients" destination="kmK-hH-dia" id="QPG-9U-rdo"/>
                         <outlet property="recipeTitle" destination="VA4-rd-ZkB" id="Oe3-8E-0c3"/>
                     </connections>
                 </viewController>
