@@ -8,13 +8,23 @@
 import UIKit
 
 class RecipeDetailsViewController: UIViewController {
-
+    var downloadTask: URLSessionDownloadTask?
+    var recipeInfo: SearchResult!
+    @IBOutlet weak var recipeTitle: UILabel!
+    @IBOutlet weak var recipeImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configure()
         // Do any additional setup after loading the view.
     }
-    
+    func configure() {
+      recipeTitle.text = recipeInfo.title
+      recipeImage.image = UIImage(systemName: "square")
+        if let imageURL = URL(string: recipeInfo.image) {
+          downloadTask = recipeImage.loadImage(url: imageURL)
+        }
+
+      }
 
     /*
     // MARK: - Navigation

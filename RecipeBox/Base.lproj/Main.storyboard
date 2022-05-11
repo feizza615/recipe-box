@@ -239,14 +239,47 @@
                     <view key="view" contentMode="scaleToFill" id="dFE-35-cu0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OL3-mK-7xg">
+                                <rect key="frame" x="0.0" y="44" width="375" height="213"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="22r-OX-fMS"/>
+                                    <constraint firstAttribute="width" constant="375" id="nty-Kl-jH1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VA4-rd-ZkB">
+                                <rect key="frame" x="16" y="265" width="51" height="27.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="Avenir-Black"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="NRv-gN-mFW"/>
                         <color key="backgroundColor" red="0.99484437699999995" green="0.94826608899999998" blue="0.84429597850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OL3-mK-7xg" firstAttribute="top" secondItem="NRv-gN-mFW" secondAttribute="top" id="2Ph-hj-Yov"/>
+                            <constraint firstItem="OL3-mK-7xg" firstAttribute="trailing" secondItem="NRv-gN-mFW" secondAttribute="trailing" id="3gx-rv-FVJ"/>
+                            <constraint firstItem="VA4-rd-ZkB" firstAttribute="leading" secondItem="NRv-gN-mFW" secondAttribute="leading" constant="16" id="CB3-Z6-jgQ"/>
+                            <constraint firstItem="OL3-mK-7xg" firstAttribute="leading" secondItem="NRv-gN-mFW" secondAttribute="leading" id="hFf-hC-ouE"/>
+                            <constraint firstItem="VA4-rd-ZkB" firstAttribute="top" secondItem="OL3-mK-7xg" secondAttribute="bottom" constant="8" symbolic="YES" id="vpR-Ei-txr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="39H-0i-Wl9"/>
+                    <connections>
+                        <outlet property="recipeImage" destination="OL3-mK-7xg" id="25z-gz-t1I"/>
+                        <outlet property="recipeTitle" destination="VA4-rd-ZkB" id="Oe3-8E-0c3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjt-Rs-hrZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2202" y="762"/>
+            <point key="canvasLocation" x="2200.8000000000002" y="761.46926536731644"/>
         </scene>
         <!--Ingredients-->
         <scene sceneID="rvx-Dr-pIj">
@@ -258,14 +291,14 @@
                         <color key="backgroundColor" red="0.99484437699999995" green="0.94826608899999998" blue="0.84429597850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" tag="100" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="ingredientCell" id="0Zc-A8-2hg">
-                                <rect key="frame" x="16" y="49.5" width="343" height="46.5"/>
+                                <rect key="frame" x="16" y="49.5" width="343" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Zc-A8-2hg" id="rUc-pR-XuH">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="46.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="47"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-Wz-11V">
-                                            <rect key="frame" x="24" y="11" width="42" height="24"/>
+                                            <rect key="frame" x="24" y="11" width="42" height="24.5"/>
                                             <accessibility key="accessibilityConfiguration" identifier="ingredientLabel"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
@@ -286,14 +319,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" tag="101" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="yourIngredientCell" id="u3t-iE-Qje">
-                                <rect key="frame" x="16" y="96" width="343" height="46.5"/>
+                                <rect key="frame" x="16" y="96.5" width="343" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u3t-iE-Qje" id="fpJ-so-irX">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="46.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="47"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="201" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XS7-QE-8Ht">
-                                            <rect key="frame" x="25" y="11" width="42" height="24"/>
+                                            <rect key="frame" x="25" y="11" width="42" height="24.5"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
                                                     <attributes>
