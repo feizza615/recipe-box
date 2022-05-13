@@ -10,7 +10,7 @@ import UIKit
 class DetailsTableViewController: UITableViewController {
     var downloadTask: URLSessionDownloadTask?
     var recipeInfo: SearchResult!
-    var results: SummaryResult!
+    var summaryInfo: SummaryResult!
     let quoteCellReuseIdentifier = "DetailCell"
     let quotes = [
         "But I can feel every other monster's as well. They all care about each other so much. And... they care about you too, Frisk. I wish I could tell you how everyone feels about you.",
@@ -42,8 +42,8 @@ class DetailsTableViewController: UITableViewController {
         let url = spoonacularURL(recipeID: recipeID)
         print("URL: '\(url)'")
         if let data = performStoreRequest(with: url) {  // Modified
-            results = parse(data: data)               // New line
-            print("Got results: \(results)")              // New line
+            summaryInfo = parse(data: data)               // New line
+            print("Got summary: \(summaryInfo)")              // New line
            }
            tableView.reloadData()
     }
@@ -94,8 +94,7 @@ class DetailsTableViewController: UITableViewController {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! DetailCell
-        cell.DetailLabel.text = "Summary"
-        cell.DetailContent.text = quotes[indexPath.row]
+        cell.configureSummary(for: summaryInfo)
         
         return cell    }
     

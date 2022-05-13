@@ -9,27 +9,39 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeResultCell" id="4mT-Z8-Wys" customClass="RecipeResultCell" customModule="RecipeBox" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4mT-Z8-Wys" id="hOx-MW-RKy">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEe-SR-GIG">
-                        <rect key="frame" x="120" y="24" width="228" height="25"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEe-SR-GIG">
+                        <rect key="frame" x="120" y="24" width="228" height="26"/>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <font key="NSFont" size="18" name="Avenir-Book"/>
+                                    <font key="NSFont" size="19" name="Avenir-Roman"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8hi-4y-fWf">
-                        <rect key="frame" x="9" y="5" width="90" height="88"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iC1-Rg-PGP">
+                        <rect key="frame" x="120" y="58" width="41.5" height="41"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" size="17" name="Avenir-Book"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8hi-4y-fWf">
+                        <rect key="frame" x="9" y="12" width="90" height="88"/>
                         <color key="tintColor" red="0.93817383050000003" green="0.42620047929999999" blue="0.36924731729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="DhO-nR-Fut"/>
@@ -37,21 +49,9 @@
                         </constraints>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iC1-Rg-PGP">
-                        <rect key="frame" x="120" y="57" width="34" height="19.5"/>
-                        <attributedString key="attributedText">
-                            <fragment content="Label">
-                                <attributes>
-                                    <font key="NSFont" size="14" name="Avenir-Book"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="8hi-4y-fWf" firstAttribute="top" secondItem="hOx-MW-RKy" secondAttribute="top" constant="4" id="AZu-a3-2ug"/>
+                    <constraint firstItem="8hi-4y-fWf" firstAttribute="top" secondItem="hOx-MW-RKy" secondAttribute="top" constant="11" id="AZu-a3-2ug"/>
                     <constraint firstAttribute="trailingMargin" secondItem="JEe-SR-GIG" secondAttribute="trailing" constant="11" id="BTG-9O-PSn"/>
                     <constraint firstAttribute="bottomMargin" secondItem="iC1-Rg-PGP" secondAttribute="bottom" constant="11" id="G6L-Hf-5vn"/>
                     <constraint firstItem="8hi-4y-fWf" firstAttribute="leading" secondItem="hOx-MW-RKy" secondAttribute="leading" constant="9" id="MGE-QP-8e5"/>
@@ -59,7 +59,7 @@
                     <constraint firstItem="JEe-SR-GIG" firstAttribute="top" secondItem="hOx-MW-RKy" secondAttribute="topMargin" constant="13" id="QLe-RV-exc"/>
                     <constraint firstItem="JEe-SR-GIG" firstAttribute="leading" secondItem="8hi-4y-fWf" secondAttribute="trailing" constant="21" id="ShR-BT-pd0"/>
                     <constraint firstItem="iC1-Rg-PGP" firstAttribute="top" secondItem="JEe-SR-GIG" secondAttribute="bottom" constant="8" symbolic="YES" id="ccy-me-NBJ"/>
-                    <constraint firstAttribute="bottom" secondItem="8hi-4y-fWf" secondAttribute="bottom" constant="4" id="dFN-6H-tuN"/>
+                    <constraint firstAttribute="bottom" secondItem="8hi-4y-fWf" secondAttribute="bottom" constant="20" id="dFN-6H-tuN"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.99484437699999995" green="0.94826608899999998" blue="0.84429597850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,7 +68,7 @@
                 <outlet property="recipeImageView" destination="8hi-4y-fWf" id="sNG-jH-o3C"/>
                 <outlet property="recipeNameLabel" destination="JEe-SR-GIG" id="fXt-Gj-CwB"/>
             </connections>
-            <point key="canvasLocation" x="4" y="95.352323838080963"/>
+            <point key="canvasLocation" x="4" y="94.902548725637189"/>
         </tableViewCell>
     </objects>
     <resources>
