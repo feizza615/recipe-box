@@ -28,7 +28,6 @@
 		979B09DA280A68D9008CE0BE /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B09D9280A68D9008CE0BE /* CategoryModel.swift */; };
 		979BB40C28106D8200B5BB81 /* IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BB40B28106D8100B5BB81 /* IngredientsTableViewController.swift */; };
 		979BB40E2810905000B5BB81 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BB40D2810905000B5BB81 /* RecipesTableViewController.swift */; };
-		97A50E0628282B6000B223D6 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A50E0528282B6000B223D6 /* RecipeDetailsViewController.swift */; };
 		97A50E0C282835C700B223D6 /* Sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 97A50E0B282835C700B223D6 /* Sound.caf */; };
 		97C01EF42808844B00540EBB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97C01EF32808844B00540EBB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -56,7 +55,6 @@
 		979B09D9280A68D9008CE0BE /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		979BB40B28106D8100B5BB81 /* IngredientsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewController.swift; sourceTree = "<group>"; };
 		979BB40D2810905000B5BB81 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
-		97A50E0528282B6000B223D6 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		97A50E0B282835C700B223D6 /* Sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sound.caf; sourceTree = "<group>"; };
 		97C01EF32808844B00540EBB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5534FA658294BE8A7A19399 /* Pods_RecipeBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,7 +121,6 @@
 				97C01EF32808844B00540EBB /* GoogleService-Info.plist */,
 				975AB65C28033B6700BA798B /* Info.plist */,
 				979BB40B28106D8100B5BB81 /* IngredientsTableViewController.swift */,
-				97A50E0528282B6000B223D6 /* RecipeDetailsViewController.swift */,
 				975AB65928033B6700BA798B /* LaunchScreen.storyboard */,
 				975AB65428033B6300BA798B /* Main.storyboard */,
 				97264678282EBBB300552BB0 /* DetailCell.xib */,
@@ -274,7 +271,6 @@
 				975AB64F28033B6300BA798B /* AppDelegate.swift in Sources */,
 				979BB40E2810905000B5BB81 /* RecipesTableViewController.swift in Sources */,
 				975AB6692803ABBB00BA798B /* CategoryGridCell.swift in Sources */,
-				97A50E0628282B6000B223D6 /* RecipeDetailsViewController.swift in Sources */,
 				971DAB34282B018E0003ABB9 /* UIImageView+DownloadImage.swift..swift in Sources */,
 				975AB6672803AA2600BA798B /* CategoryViewController.swift in Sources */,
 				9746BBE52811C9F6004A1A72 /* RecipeResult.swift in Sources */,

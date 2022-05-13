@@ -12,9 +12,6 @@ class DetailsTableViewController: UITableViewController {
     var recipeInfo: SearchResult!
     let quoteCellReuseIdentifier = "DetailCell"
     let quotes = [
-        "I always was a crybaby, wasn’t I",
-        "Do not worry about me. Someone has to take care of these flowers.",
-        "They were the one that wanted to... ...to use our full power. I was the one that resisted. And then, because of me, we... Well, that's why I ended up a flower",
         "But I can feel every other monster's as well. They all care about each other so much. And... they care about you too, Frisk. I wish I could tell you how everyone feels about you.",
         
         "As a flower, I was soulless. I lacked the power to love other people. However, with everyone's souls inside me... I not only have my own compassion back... But I can feel every other monster's as well.As a flower, I was soulless. I lacked the power to love other people. However, with everyone's souls inside me... I not only have my own compassion back... But I can feel every other monster's as well.As a flower, I was soulless. I lacked the power to love other people. However, with everyone's souls inside me... I not only have my own compassion back... But I can feel every other monster's as well."
@@ -26,7 +23,7 @@ class DetailsTableViewController: UITableViewController {
         
         let cellNib = UINib(nibName: "DetailCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "DetailCell")
-        
+        print(recipeInfo.id)
         
         self.tableView.rowHeight  = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 100
