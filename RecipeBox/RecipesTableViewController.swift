@@ -109,11 +109,12 @@ class RecipesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-//        if(segue.identifier == "toRecipeDetails"){
-////            let RecipeDetailsView = segue.destination as! RecipeDetailsViewController
-//            let DetailsView = segue.destination as! DetailsTableViewController
-////            RecipeDetailsView.recipeInfo = sender as? SearchResult
-//        }
+        if(segue.identifier == "toRecipeDetails"){
+//            let RecipeDetailsView = segue.destination as! RecipeDetailsViewController
+            let DetailsView = segue.destination as! DetailsTableViewController
+            DetailsView.recipeInfo = sender as? SearchResult
+//            RecipeDetailsView.recipeInfo = sender as? SearchResult
+        }
     }
 
    
@@ -122,8 +123,8 @@ class RecipesTableViewController: UITableViewController {
     //https://developer.apple.com/documentation/uikit/uiviewcontroller/1621413-performsegue
     //https://odenza.medium.com/how-to-pass-parameters-to-another-view-when-using-performsegue-in-swift-5-dd96832b412d
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let recipeInfo = results[indexPath.row]
-        self.performSegue(withIdentifier: "toRecipeDetails", sender: self)
+        let recipeInfo = results[indexPath.row]
+        self.performSegue(withIdentifier: "toRecipeDetails", sender: recipeInfo)
         //self.performSegue(withIdentifier: "toRecipeDetails", sender: recipeInfo)
     }
 

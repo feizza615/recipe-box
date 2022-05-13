@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailImageCell" rowHeight="198" id="8wP-gw-gdy" customClass="DetailImageCell" customModule="RecipeBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8wP-gw-gdy" id="6J8-z8-PU9">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oYe-be-XYm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S52-c4-HEB">
+                        <rect key="frame" x="8" y="156" width="347" height="33"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <color key="NSColor" red="0.8892840743" green="0.38827383519999997" blue="0.33767318730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="24" name="Avenir-Black"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oYe-be-XYm" firstAttribute="leading" secondItem="6J8-z8-PU9" secondAttribute="leading" id="4Kh-vA-3gF"/>
+                    <constraint firstAttribute="trailing" secondItem="oYe-be-XYm" secondAttribute="trailing" id="GmR-sI-iQF"/>
+                    <constraint firstItem="S52-c4-HEB" firstAttribute="top" secondItem="oYe-be-XYm" secondAttribute="bottom" constant="9" id="YFQ-TH-X83"/>
+                    <constraint firstAttribute="trailing" secondItem="S52-c4-HEB" secondAttribute="trailing" constant="20" symbolic="YES" id="fM6-t0-okC"/>
+                    <constraint firstItem="S52-c4-HEB" firstAttribute="top" secondItem="oYe-be-XYm" secondAttribute="bottom" constant="9" id="ft7-u0-qlr"/>
+                    <constraint firstAttribute="bottom" secondItem="S52-c4-HEB" secondAttribute="bottom" constant="11" id="mCw-j7-Ofa"/>
+                    <constraint firstItem="oYe-be-XYm" firstAttribute="top" secondItem="6J8-z8-PU9" secondAttribute="top" id="ntc-yP-Byd"/>
+                    <constraint firstItem="S52-c4-HEB" firstAttribute="leading" secondItem="6J8-z8-PU9" secondAttribute="leading" constant="8" id="qoG-p2-tuV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.99484437699999995" green="0.94826608899999998" blue="0.84429597850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="DetailImage" destination="oYe-be-XYm" id="sCy-N0-Hr4"/>
+                <outlet property="DetailTitle" destination="S52-c4-HEB" id="nQ6-Fv-XBg"/>
+            </connections>
+            <point key="canvasLocation" x="128.2608695652174" y="139.28571428571428"/>
+        </tableViewCell>
+    </objects>
+</document>

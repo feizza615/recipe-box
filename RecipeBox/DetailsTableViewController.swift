@@ -8,6 +8,8 @@
 import UIKit
 
 class DetailsTableViewController: UITableViewController {
+    var downloadTask: URLSessionDownloadTask?
+    var recipeInfo: SearchResult!
     let quoteCellReuseIdentifier = "DetailCell"
     let quotes = [
         "I always was a crybaby, wasn’t I",
@@ -19,10 +21,15 @@ class DetailsTableViewController: UITableViewController {
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
+        let imageCellNib = UINib(nibName: "DetailImageCell", bundle: nil)
+        tableView.register(imageCellNib, forCellReuseIdentifier: "DetailImageCell")
+        
         let cellNib = UINib(nibName: "DetailCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "DetailCell")
+        
+        
         self.tableView.rowHeight  = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 80
+        self.tableView.estimatedRowHeight = 100
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
@@ -44,6 +51,16 @@ class DetailsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailImageCell", for: indexPath) as! DetailImageCell
+            cell.DetailImage.image = UIImage(systemName: "square")
+            if let imageURL = URL(string: recipeInfo.image) {
+                downloadTask = cell.DetailImage.loadImage(url: imageURL)
+            }
+            cell.DetailTitle.text = recipeInfo.title
+            
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! DetailCell
         cell.DetailLabel.text = "Asriel"
         cell.DetailContent.text = quotes[indexPath.row]
