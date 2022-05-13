@@ -10,6 +10,7 @@ import UIKit
 class DetailsTableViewController: UITableViewController {
     var downloadTask: URLSessionDownloadTask?
     var recipeInfo: SearchResult!
+    var results: SummaryResult!
     let quoteCellReuseIdentifier = "DetailCell"
     let quotes = [
         "But I can feel every other monster's as well. They all care about each other so much. And... they care about you too, Frisk. I wish I could tell you how everyone feels about you.",
@@ -23,14 +24,48 @@ class DetailsTableViewController: UITableViewController {
         
         let cellNib = UINib(nibName: "DetailCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "DetailCell")
-        print(recipeInfo.id)
-        
+
+        getSummary(recipeID: String(recipeInfo.id))
         self.tableView.rowHeight  = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 100
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
 
+    func spoonacularURL(recipeID: String) -> URL {
+      let urlString = String(
+        format:"https://api.spoonacular.com/recipes/\(recipeID)/summary?apiKey=08927d2539f34cd380ec63a2d230e57e")
+      let url = URL(string: urlString)
+      return url!
+    }
+    func getSummary(recipeID:String){
+        let url = spoonacularURL(recipeID: recipeID)
+        print("URL: '\(url)'")
+        if let data = performStoreRequest(with: url) {  // Modified
+            results = parse(data: data)               // New line
+            print("Got results: \(results)")              // New line
+           }
+           tableView.reloadData()
+    }
+    func performStoreRequest(with url: URL) -> Data? {
+      do {
+       return try Data(contentsOf: url)
+      } catch {
+       print("Download Error: \(error.localizedDescription)")
+       return nil
+      }
+    }
+    func parse(data: Data)->SummaryResult?{
+        do {
+            let searchResult: SummaryResult = try! JSONDecoder().decode(SummaryResult.self, from: data)
+            return searchResult
+          } catch {
+            print("JSON Error: \(error)")
+            return nil
+          }
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,7 +78,7 @@ class DetailsTableViewController: UITableViewController {
         if section == 0{
             return 1
         }
-        return quotes.count
+        return 1
     }
 
     
@@ -59,7 +94,7 @@ class DetailsTableViewController: UITableViewController {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! DetailCell
-        cell.DetailLabel.text = "Asriel"
+        cell.DetailLabel.text = "Summary"
         cell.DetailContent.text = quotes[indexPath.row]
         
         return cell    }
