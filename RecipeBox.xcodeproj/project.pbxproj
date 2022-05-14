@@ -18,6 +18,7 @@
 		9726467D282EC59600552BB0 /* DetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9726467C282EC59600552BB0 /* DetailImageCell.xib */; };
 		97264681282EC6A600552BB0 /* DetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97264680282EC6A600552BB0 /* DetailImageCell.swift */; };
 		97264683282ED1BF00552BB0 /* RecipeSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97264682282ED1BF00552BB0 /* RecipeSummary.swift */; };
+		97264686282F320A00552BB0 /* Sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 97264685282F320900552BB0 /* Sound.caf */; };
 		9746BBE52811C9F6004A1A72 /* RecipeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9746BBE42811C9F6004A1A72 /* RecipeResult.swift */; };
 		975AB64F28033B6300BA798B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AB64E28033B6300BA798B /* AppDelegate.swift */; };
 		975AB65128033B6300BA798B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AB65028033B6300BA798B /* SceneDelegate.swift */; };
@@ -29,7 +30,6 @@
 		979B09DA280A68D9008CE0BE /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B09D9280A68D9008CE0BE /* CategoryModel.swift */; };
 		979BB40C28106D8200B5BB81 /* IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BB40B28106D8100B5BB81 /* IngredientsTableViewController.swift */; };
 		979BB40E2810905000B5BB81 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BB40D2810905000B5BB81 /* RecipesTableViewController.swift */; };
-		97A50E0C282835C700B223D6 /* Sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 97A50E0B282835C700B223D6 /* Sound.caf */; };
 		97C01EF42808844B00540EBB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97C01EF32808844B00540EBB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +44,7 @@
 		9726467C282EC59600552BB0 /* DetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageCell.xib; sourceTree = "<group>"; };
 		97264680282EC6A600552BB0 /* DetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCell.swift; sourceTree = "<group>"; };
 		97264682282ED1BF00552BB0 /* RecipeSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSummary.swift; sourceTree = "<group>"; };
+		97264685282F320900552BB0 /* Sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sound.caf; sourceTree = "<group>"; };
 		9746BBE42811C9F6004A1A72 /* RecipeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResult.swift; sourceTree = "<group>"; };
 		975AB64B28033B6300BA798B /* RecipeBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		975AB64E28033B6300BA798B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		979B09D9280A68D9008CE0BE /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		979BB40B28106D8100B5BB81 /* IngredientsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewController.swift; sourceTree = "<group>"; };
 		979BB40D2810905000B5BB81 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
-		97A50E0B282835C700B223D6 /* Sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sound.caf; sourceTree = "<group>"; };
 		97C01EF32808844B00540EBB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5534FA658294BE8A7A19399 /* Pods_RecipeBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F358E6FF012038482727B0 /* Pods-RecipeBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeBox.debug.xcconfig"; path = "Target Support Files/Pods-RecipeBox/Pods-RecipeBox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +93,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		97264684282F314C00552BB0 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				97264685282F320900552BB0 /* Sound.caf */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		975AB64228033B6300BA798B = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +122,7 @@
 		975AB64D28033B6300BA798B /* RecipeBox */ = {
 			isa = PBXGroup;
 			children = (
-				97A50E0A282835C700B223D6 /* Sound */,
+				97264684282F314C00552BB0 /* Sound */,
 				975AB64E28033B6300BA798B /* AppDelegate.swift */,
 				975AB65728033B6700BA798B /* Assets.xcassets */,
 				975AB6682803ABBB00BA798B /* CategoryGridCell.swift */,
@@ -140,15 +148,6 @@
 				971DAB33282B018D0003ABB9 /* UIImageView+DownloadImage.swift..swift */,
 			);
 			path = RecipeBox;
-			sourceTree = "<group>";
-		};
-		97A50E0A282835C700B223D6 /* Sound */ = {
-			isa = PBXGroup;
-			children = (
-				97A50E0B282835C700B223D6 /* Sound.caf */,
-			);
-			name = Sound;
-			path = "../../../Downloads/chapter-31-final/MyLocations/Sound";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,8 +212,8 @@
 			files = (
 				97043B0F28235BFB00B3062C /* RecipeResultCell.xib in Resources */,
 				975AB65B28033B6700BA798B /* LaunchScreen.storyboard in Resources */,
+				97264686282F320A00552BB0 /* Sound.caf in Resources */,
 				9726467D282EC59600552BB0 /* DetailImageCell.xib in Resources */,
-				97A50E0C282835C700B223D6 /* Sound.caf in Resources */,
 				97C01EF42808844B00540EBB /* GoogleService-Info.plist in Resources */,
 				97264679282EBBB300552BB0 /* DetailCell.xib in Resources */,
 				975AB65828033B6700BA798B /* Assets.xcassets in Resources */,
