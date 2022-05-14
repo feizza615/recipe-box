@@ -12,4 +12,5 @@ class CategoryGridCell: UICollectionViewCell {
     @IBOutlet weak var CategoryView: UIImageView!
     
     @IBOutlet weak var CategoryName: UILabel!
+    @IBOutlet weak var IngredientCount: UILabel!
 }

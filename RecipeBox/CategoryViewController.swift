@@ -7,17 +7,24 @@
 
 import FirebaseDatabase
 import UIKit
-
-class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, IngredientsTableViewControllerDelegate {
+    var catDict:[String: Int]=[:]
+    func ingredientsTableViewController(_ controller: IngredientsTableViewController, didFinishSelecting ingredientCount: [String: Int]) {
+        navigationController?.popViewController(animated: true)
+    //https://stackoverflow.com/questions/24051904/how-do-you-add-a-dictionary-of-items-into-another-dictionary
+        ingredientCount.forEach { (k,v) in catDict[k] = v }
+        print(catDict)
+        collectionView.reloadData()
+    }
     
     //MARK: Swift 5: Firebase Database in App - Setup/Read/Write Data Video
     private let database = Database.database().reference()
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var findButton: UIButton!
-    
+    @IBOutlet weak var ingredientCount: UILabel!
     var catArray=[CategoryModel]()
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +82,8 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         cell.CategoryView.image = UIImage(named: catArray[indexPath.row].categoryImage!)
         cell.CategoryName.text = catArray[indexPath.row].categoryName
+        cell.IngredientCount.text = " \(catDict[catArray[indexPath.row].categoryName!] ?? 0) Ingredients"
+
         return cell
     }
 
@@ -89,6 +98,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         if(segue.identifier == "showIngredients"){
             let IngredientsView = segue.destination as! IngredientsTableViewController
             IngredientsView.info = sender as? CategoryModel
+            IngredientsView.delegate = self
         }else if(segue.identifier == "showRecipes"){
             
             let RecipeResultsView = segue.destination as! RecipesTableViewController

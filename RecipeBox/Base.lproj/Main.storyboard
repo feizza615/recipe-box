@@ -151,7 +151,20 @@
                                                         <fragment content="Label">
                                                             <attributes>
                                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                <font key="NSFont" size="18" name="Avenir-Book"/>
+                                                                <font key="NSFont" size="18" name="Avenir-Roman"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-qU-5rS">
+                                                    <rect key="frame" x="42" y="108" width="95" height="20"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <font key="NSFont" size="14" name="Avenir-Book"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -160,17 +173,22 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="uHU-A0-H0C" firstAttribute="centerX" secondItem="vBI-za-zs0" secondAttribute="centerX" id="5tW-QP-Je6"/>
+                                                <constraint firstItem="hkb-qU-5rS" firstAttribute="top" secondItem="uHU-A0-H0C" secondAttribute="bottom" constant="2" id="8dw-4T-tIr"/>
                                                 <constraint firstAttribute="bottom" secondItem="uHU-A0-H0C" secondAttribute="bottom" constant="50" id="99a-82-kCl"/>
                                                 <constraint firstItem="7DT-Vm-cF3" firstAttribute="leading" secondItem="vBI-za-zs0" secondAttribute="leading" constant="15" id="DoI-jN-31m"/>
                                                 <constraint firstItem="7DT-Vm-cF3" firstAttribute="centerY" secondItem="vBI-za-zs0" secondAttribute="centerY" id="R9P-da-MJD"/>
                                                 <constraint firstItem="7DT-Vm-cF3" firstAttribute="trailing" secondItem="vBI-za-zs0" secondAttribute="trailingMargin" id="Rch-hj-bDN"/>
+                                                <constraint firstAttribute="trailing" secondItem="hkb-qU-5rS" secondAttribute="trailing" constant="42" id="daD-JR-uBP"/>
+                                                <constraint firstAttribute="bottom" secondItem="hkb-qU-5rS" secondAttribute="bottom" constant="28" id="h5E-6U-xn8"/>
+                                                <constraint firstItem="hkb-qU-5rS" firstAttribute="leading" secondItem="vBI-za-zs0" secondAttribute="leading" constant="42" id="l9V-mY-HnB"/>
                                                 <constraint firstItem="7DT-Vm-cF3" firstAttribute="top" secondItem="vBI-za-zs0" secondAttribute="topMargin" id="qGw-sq-eMh"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="179" height="156"/>
                                         <connections>
-                                            <outlet property="CategoryName" destination="uHU-A0-H0C" id="2Dh-x6-V2D"/>
+                                            <outlet property="CategoryName" destination="uHU-A0-H0C" id="koP-jx-uQW"/>
                                             <outlet property="CategoryView" destination="7DT-Vm-cF3" id="0UW-ZQ-7oE"/>
+                                            <outlet property="IngredientCount" destination="hkb-qU-5rS" id="zfW-P3-Ko3"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -319,7 +337,14 @@
                             <outlet property="delegate" destination="1hT-AS-TFL" id="CuX-Us-4Ki"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ingredients" id="h3P-Nt-eqj"/>
+                    <navigationItem key="navigationItem" title="Ingredients" id="h3P-Nt-eqj">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="WhQ-s3-e2M">
+                            <color key="tintColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="done" destination="1hT-AS-TFL" id="Y66-Wt-WjB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybT-2x-zqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
