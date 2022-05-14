@@ -11,12 +11,7 @@ class DetailsTableViewController: UITableViewController {
     var downloadTask: URLSessionDownloadTask?
     var recipeInfo: SearchResult!
     var summaryInfo: SummaryResult!
-    let quoteCellReuseIdentifier = "DetailCell"
-    let quotes = [
-        "But I can feel every other monster's as well. They all care about each other so much. And... they care about you too, Frisk. I wish I could tell you how everyone feels about you.",
-        
-        "As a flower, I was soulless. I lacked the power to love other people. However, with everyone's souls inside me... I not only have my own compassion back... But I can feel every other monster's as well.As a flower, I was soulless. I lacked the power to love other people. However, with everyone's souls inside me... I not only have my own compassion back... But I can feel every other monster's as well.As a flower, I was soulless. I lacked the power to love other people. However, with everyone's souls inside me... I not only have my own compassion back... But I can feel every other monster's as well."
-    ]
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         let imageCellNib = UINib(nibName: "DetailImageCell", bundle: nil)
@@ -24,8 +19,8 @@ class DetailsTableViewController: UITableViewController {
         
         let cellNib = UINib(nibName: "DetailCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "DetailCell")
-
         getSummary(recipeID: String(recipeInfo.id))
+        //https://github.com/fluffyes/dynamicHeightTable:
         self.tableView.rowHeight  = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 100
         self.tableView.dataSource = self

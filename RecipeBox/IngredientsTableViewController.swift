@@ -26,7 +26,6 @@ class IngredientsTableViewController: UITableViewController {
     
     //MARK: - Audio effect Functions
     func loadSoundEffect(_ name: String) {
-        print("hello")
       if let path = Bundle.main.path(forResource: name, ofType: nil) {
         let fileURL = URL(fileURLWithPath: path, isDirectory: false)
         let error = AudioServicesCreateSystemSoundID(fileURL as CFURL, &soundID)
