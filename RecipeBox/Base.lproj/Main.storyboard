@@ -157,12 +157,14 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-qU-5rS">
-                                                    <rect key="frame" x="69" y="108" width="34" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-qU-5rS">
+                                                    <rect key="frame" x="42" y="108" width="95" height="20"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Label">
                                                             <attributes>
+                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                 <font key="NSFont" size="14" name="Avenir-Book"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -174,11 +176,11 @@
                                                 <constraint firstItem="hkb-qU-5rS" firstAttribute="top" secondItem="uHU-A0-H0C" secondAttribute="bottom" constant="2" id="8dw-4T-tIr"/>
                                                 <constraint firstAttribute="bottom" secondItem="uHU-A0-H0C" secondAttribute="bottom" constant="50" id="99a-82-kCl"/>
                                                 <constraint firstItem="7DT-Vm-cF3" firstAttribute="leading" secondItem="vBI-za-zs0" secondAttribute="leading" constant="15" id="DoI-jN-31m"/>
-                                                <constraint firstItem="hkb-qU-5rS" firstAttribute="leading" secondItem="vBI-za-zs0" secondAttribute="leading" constant="69" id="INp-Ew-qrQ"/>
                                                 <constraint firstItem="7DT-Vm-cF3" firstAttribute="centerY" secondItem="vBI-za-zs0" secondAttribute="centerY" id="R9P-da-MJD"/>
                                                 <constraint firstItem="7DT-Vm-cF3" firstAttribute="trailing" secondItem="vBI-za-zs0" secondAttribute="trailingMargin" id="Rch-hj-bDN"/>
+                                                <constraint firstAttribute="trailing" secondItem="hkb-qU-5rS" secondAttribute="trailing" constant="42" id="daD-JR-uBP"/>
                                                 <constraint firstAttribute="bottom" secondItem="hkb-qU-5rS" secondAttribute="bottom" constant="28" id="h5E-6U-xn8"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hkb-qU-5rS" secondAttribute="trailing" constant="20" symbolic="YES" id="iiE-hm-D43"/>
+                                                <constraint firstItem="hkb-qU-5rS" firstAttribute="leading" secondItem="vBI-za-zs0" secondAttribute="leading" constant="42" id="l9V-mY-HnB"/>
                                                 <constraint firstItem="7DT-Vm-cF3" firstAttribute="top" secondItem="vBI-za-zs0" secondAttribute="topMargin" id="qGw-sq-eMh"/>
                                             </constraints>
                                         </collectionViewCellContentView>

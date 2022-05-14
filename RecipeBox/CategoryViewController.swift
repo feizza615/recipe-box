@@ -8,11 +8,12 @@
 import FirebaseDatabase
 import UIKit
 class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, IngredientsTableViewControllerDelegate {
-    var catDict=[String: Int]()
+    var catDict:[String: Int]=[:]
     func ingredientsTableViewController(_ controller: IngredientsTableViewController, didFinishSelecting ingredientCount: [String: Int]) {
         navigationController?.popViewController(animated: true)
-        catDict = ingredientCount
-        
+    //https://stackoverflow.com/questions/24051904/how-do-you-add-a-dictionary-of-items-into-another-dictionary
+        ingredientCount.forEach { (k,v) in catDict[k] = v }
+        print(catDict)
         collectionView.reloadData()
     }
     
@@ -81,6 +82,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         cell.CategoryView.image = UIImage(named: catArray[indexPath.row].categoryImage!)
         cell.CategoryName.text = catArray[indexPath.row].categoryName
+        cell.IngredientCount.text = " \(catDict[catArray[indexPath.row].categoryName!] ?? 0) Ingredients"
 
         return cell
     }
