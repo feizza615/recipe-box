@@ -7,17 +7,23 @@
 
 import FirebaseDatabase
 import UIKit
-
-class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, IngredientsTableViewControllerDelegate {
+    var catDict=[String: Int]()
+    func ingredientsTableViewController(_ controller: IngredientsTableViewController, didFinishSelecting ingredientCount: [String: Int]) {
+        navigationController?.popViewController(animated: true)
+        catDict = ingredientCount
+        
+        collectionView.reloadData()
+    }
     
     //MARK: Swift 5: Firebase Database in App - Setup/Read/Write Data Video
     private let database = Database.database().reference()
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var findButton: UIButton!
-    
+    @IBOutlet weak var ingredientCount: UILabel!
     var catArray=[CategoryModel]()
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +81,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         cell.CategoryView.image = UIImage(named: catArray[indexPath.row].categoryImage!)
         cell.CategoryName.text = catArray[indexPath.row].categoryName
+
         return cell
     }
 
@@ -89,6 +96,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         if(segue.identifier == "showIngredients"){
             let IngredientsView = segue.destination as! IngredientsTableViewController
             IngredientsView.info = sender as? CategoryModel
+            IngredientsView.delegate = self
         }else if(segue.identifier == "showRecipes"){
             
             let RecipeResultsView = segue.destination as! RecipesTableViewController

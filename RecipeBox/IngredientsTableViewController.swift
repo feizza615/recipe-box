@@ -7,13 +7,20 @@
 
 import UIKit
 import AudioToolbox
+
+protocol IngredientsTableViewControllerDelegate: AnyObject {
+  func ingredientsTableViewController(
+    _ controller: IngredientsTableViewController,
+    didFinishSelecting ingredientCount: [String: Int]
+  )
+}
 //https://stackoverflow.com/questions/62989843/can-we-return-two-arrays-in-one-tableview-numberofrowsinsection-without-using-se
 
 class IngredientsTableViewController: UITableViewController {
     
     var info: CategoryModel?
     var soundID: SystemSoundID = 0
-    
+    weak var delegate: IngredientsTableViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         //loadIngredients()
@@ -23,7 +30,14 @@ class IngredientsTableViewController: UITableViewController {
         self.title = info?.categoryName
         
     }
-    
+    //MARK: Define Delegate Function
+    @IBAction func done() {
+    print("done works")
+     //let ingredientCount = info?.yourIngredients?.count
+        var ingredientCount: [String: Int] = [:]
+        ingredientCount[(info?.categoryName)!]=info?.yourIngredients?.count
+      delegate?.ingredientsTableViewController(self, didFinishSelecting: ingredientCount)
+    }
     //MARK: - Audio effect Functions
     func loadSoundEffect(_ name: String) {
         print("hello")
